@@ -7,21 +7,22 @@
   <link rel="stylesheet" href="select-card.css" />
   <!-- ฟอนต์ Cinzel และ Prompt -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="style.css" >
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Prompt:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- แถบเมนูด้านบน -->
-  <nav class="navbar">
-    <div class="logo">TUM<span>9</span></div>
-    <ul class="nav-links">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#" class="active">Service</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
-  </nav>
-  <div class="nav-divider"></div>
+  <header class="site-header">
+        <div class="container-nav">
+            <a class="logo" href="index.html" aria-label="TUM9 home"><i>TUM9</i></a>
+            <nav class="nbr" aria-label="Main navigation">
+                <a href="index.html" aria-current="page">Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Service</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
 
   <main class="reading-container">
     <!-- หัวข้อแสดงเรื่องที่เลือกมาจากหน้าแรก -->
@@ -78,5 +79,5 @@
   </main>
 
 </body>
-<script src="select-card.js"></script>
+
 </html>

@@ -1,0 +1,410 @@
+/* about css  */
+.about-main {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    padding: clamp(72px, 25vh, 100px) 24px 24px;
+}
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+    width: min(100%, 900px);
+    margin: 0 auto;
+}
+
+.service-card {
+    position: relative;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 17px;
+    background: rgba(57, 34, 79, 0.75);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.28);
+    transition: box-shadow 0.2s ease;
+}
+
+.service-card:focus-visible {
+    outline: 2px solid #f0d3ff;
+    outline-offset: 3px;
+    box-shadow: 0 0 22px rgba(206, 145, 255, 0.55);
+}
+
+.service-card h2 {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 29px;
+    overflow: hidden;
+    padding: 0 4px;
+    border-radius: 17px 17px 0 0;
+    color: #4b3154;
+    background: #f0d3ff;
+    font-family: 'Brush Script MT', 'Segoe Script', cursive;
+    font-size: 13px;
+    font-style: italic;
+    font-weight: 400;
+    white-space: nowrap;
+}
+
+.service-card img {
+    display: block;
+    width: 100%;
+    height: calc(100% - 29px);
+    object-fit: cover;
+    transition: filter 0.25s ease;
+}
+
+.service-card-description {
+    h1{
+        font-size: 12px;
+        padding-bottom: 10px;
+        color: #7402ff;
+        
+    }
+    position: absolute;
+    z-index: 2;
+    inset: 29px 0 0;
+    overflow-y: auto;
+    padding: 12px 10px;
+    color: #542079;
+    background: #fff;
+    font-size: 10px;
+    line-height: 1.55;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.service-card-description p + ul {
+    margin-top: 10px;
+}
+
+.service-card-description ul {
+    padding-left: 14px;
+}
+
+.service-card:hover .service-card-description,
+.service-card:focus-visible .service-card-description {
+    opacity: 1;
+    visibility: visible;
+}
+
+.service-card:hover img,
+.service-card:focus-visible img {
+    filter: brightness(0) invert(1);
+}
+/* ปรับขนาดหน้าจอตามแพลจฟอร์ม */
+@media (max-width: 600px) {
+    .container-nav {
+        width: calc(100% - 32px);
+        min-height: 60px;
+    }
+
+    .logo {
+        font-size: 30px;
+    }
+
+    .nbr {
+        gap: clamp(12px, 4vw, 22px);
+    }
+
+    .nbr a {
+        font-size: 14px;
+    }
+
+    .about-main {
+        padding: 72px 20px 40px;
+    }
+
+    .cards-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+        max-width: 340px;
+    }
+
+    .service-card {
+        height: 208px;
+    }
+}
+
+@media (max-width: 360px) {
+    .container-nav {
+        width: calc(100% - 24px);
+    }
+
+    .nbr {
+        gap: 10px;
+    }
+
+    .nbr a {
+        font-size: 12px;
+    }
+
+    .about-main {
+        padding-right: 12px;
+        padding-left: 12px;
+    }
+
+    .service-card {
+        height: 190px;
+    }
+}
+/* css ของ contact */
+.contact-container {
+    width: 100%;
+    min-height: 450px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* หัวข้อ Contact Us */
+.contact-title {
+    margin-top: 55px;
+    margin-bottom: 45px;
+
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    font-weight: 400;
+
+    color: #ffffff;
+}
+
+/* กล่องทั้ง 3 */
+.contact-boxes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 43px;
+}
+
+/* กล่องแต่ละใบ */
+.contact-card {
+    width: 146px;
+    height: 146px;
+
+    border: 1px solid rgba(255,255,255,0.55);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 12px;
+
+    transition: 0.3s;
+}
+
+/* ไอคอน */
+.contact-icon {
+    width: 35px;
+    height: 35px;
+}
+
+
+/* ไอคอน */
+.contact-icon {
+    width: 35px;
+    height: 35px;
+}
+
+.contact-icon svg {
+    width: 100%;
+    height: 100%;
+
+    fill: none;
+    stroke: white;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* จุดเล็กบนโลโก้ Instagram */
+.contact-icon svg .instagram-dot {
+    fill: white;
+    stroke: none;
+}
+
+/* ปุ่ม */
+.contact-button {
+    width: 130px;
+    height: 23px;
+
+    background: #321052;
+
+    color: white;
+    text-decoration: none;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+}
+
+/* เอฟเฟกต์ตอนเอาเมาส์ชี้ */
+.contact-card:hover {
+    border-color: #c69aff;
+    transform: translateY(-5px);
+
+    box-shadow: 0 0 15px rgba(180,120,255,0.25);
+}
+
+.contact-button:hover {
+    background: #7136a0;
+}
+
+/* รองรับโทรศัพท์ */
+@media (max-width: 600px) {
+
+    .contact-title {
+        margin-top: 35px;
+    }
+
+    .contact-boxes {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+}
+
+/* เอฟเฟคดาว */
+/* วงโคจรรอบ Contact Us */
+.contact-heading {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 420px;
+    height: 130px;
+    margin-top: 35px;
+    margin-bottom: 35px;
+}
+
+/* หัวข้อ */
+.contact-title {
+    position: relative;
+    z-index: 2;
+    margin: 0;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 42px;
+    font-weight: 400;
+    color: white;
+    text-shadow: 0 0 15px #bd75ff;
+}
+
+/* เส้นวงโคจร */
+.contact-heading::before {
+    content: "";
+    position: absolute;
+    width: 430px;
+    height: 65px;
+    border: 1.5px solid #a94dff;
+    border-radius: 50%;
+    transform: rotate(-12deg);
+    box-shadow:
+        0 0 8px #a94dff,
+        0 0 18px rgba(169, 77, 255, 0.6);
+}
+
+/* ดาวตรงกลาง */
+/* วงโคจรรอบ Contact Us */
+.contact-heading {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 420px;
+    height: 130px;
+    margin-top: 35px;
+    margin-bottom: 35px;
+}
+
+/* หัวข้อ */
+.contact-title {
+    position: relative;
+    z-index: 2;
+    margin: 0;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 42px;
+    font-weight: 400;
+    color: white;
+    text-shadow: 0 0 15px #bd75ff;
+}
+
+/* เส้นวงโคจร */
+.contact-heading::before {
+    content: "";
+    position: absolute;
+    width: 430px;
+    height: 65px;
+    border: 1.5px solid #a94dff;
+    border-radius: 50%;
+    transform: rotate(-12deg);
+    box-shadow:
+        0 0 8px #a94dff,
+        0 0 18px rgba(169, 77, 255, 0.6);
+}
+
+/* ดาวตรงกลาง */
+/* วงโคจรรอบ Contact Us */
+.contact-heading {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 420px;
+    height: 130px;
+    margin-top: 35px;
+    margin-bottom: 35px;
+}
+
+/* หัวข้อ */
+.contact-title {
+    position: relative;
+    z-index: 2;
+    margin: 0;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 42px;
+    font-weight: 400;
+    color: white;
+    text-shadow: 0 0 15px #bd75ff;
+}
+
+/* เส้นวงโคจร */
+.contact-heading::before {
+    content: "";
+    position: absolute;
+    width: 430px;
+    height: 65px;
+    border: 1.5px solid #a94dff;
+    border-radius: 50%;
+    transform: rotate(-12deg);
+    box-shadow:
+        0 0 8px #a94dff,
+        0 0 18px rgba(169, 77, 255, 0.6);
+}
+
+/* ดาวตรงกลาง */
+.orbit-star {
+    position: absolute;
+    z-index: 3;
+    bottom: 3px;
+    color: white;
+    font-size: 28px;
+    text-shadow: 0 0 12px #c77aff;
+}
+
+/* ระยะ */
+.contact-boxes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 43px;
+    margin-top: 10px;
+}

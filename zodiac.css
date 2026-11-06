@@ -1,0 +1,124 @@
+body{
+    margin: 0;
+}
+.bg {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.308);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box1{
+    position: relative;
+    background: linear-gradient(180deg, #26194b, #0b0518);
+    border: 1px solid rgba(250, 250, 250, 0.644);
+    border-radius: 20px;
+    height: 80%;
+    width: 40%;
+    text-align: center;
+}
+
+.close{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: rgba(13, 13, 13, 0.305);
+    height: 50px;
+    width: 50px;
+    font-size: 30px;
+    color: white;
+    border-radius: 50%;
+    border: 1px solid rgba(186, 104, 200, 0.3);
+    cursor: pointer;
+    transition:  0.4s;
+}
+.close:hover{
+    background: rgba(255, 255, 255, 0.199); 
+}
+.close:active{
+    background: rgba(255, 255, 255, 0.05); 
+}
+.p{
+    color: rgb(171, 124, 247);
+    font-size: 15px;
+    margin-top: 30px;
+    text-align: center;
+}
+.H{
+    color: white;
+    font-size: 40px;
+    margin-top: 20px;
+    margin-bottom: 13px;
+    text-align: center;
+}
+.H2{
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 15px;
+    margin-top: 13px;
+    text-align: center;
+}
+.bd{
+    margin-top: 20px;
+}
+.b{
+    position: absolute;
+    left: 80px;
+    color: white;
+}
+.date{
+    width: 70%;
+    margin: 10px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.05); 
+    border: 1px solid rgba(255, 255, 255, 0.517); 
+    border-radius: 8px; 
+    color: white; 
+    font-size: 20px;
+    box-sizing: border-box; 
+    border-radius: 20px;
+}
+.w{
+    position: absolute;
+    left: 80px;
+    color: white;
+}
+.f{
+    margin-top: 20px;
+}
+.btn{
+    width: 35%;
+    margin: 5px;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.05); 
+    border: 1px solid rgba(255, 255, 255, 0.517); 
+    border-radius: 8px; 
+    color: white; 
+    font-size: 20px;
+    box-sizing: border-box; 
+    border-radius: 20px;
+    cursor: pointer;
+    transition:  0.4s;
+}
+.btn:hover{
+    background: rgba(255, 255, 255, 0.199); 
+}
+.btn:active{
+    background: rgba(255, 255, 255, 0.05); 
+}
+.rs{
+    width: 80%;
+    margin: 17px;
+    padding: 20px;
+    background: linear-gradient(90deg,rgb(171, 124, 247),rgb(85, 0, 255));
+    border-radius: 20px;
+    color: white;
+    cursor: pointer;
+}
+.rs:hover{
+    background: linear-gradient(90deg,rgb(197, 162, 255),rgb(111, 39, 255));
+}
+.rs:active{
+    background: linear-gradient(90deg,rgb(197, 162, 255),rgb(111, 39, 255));
+}

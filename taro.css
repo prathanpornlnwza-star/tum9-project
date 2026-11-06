@@ -31,50 +31,6 @@ body::before {
   pointer-events: none;
 }
 
-/* Navbar */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.5rem 4rem;
-  z-index: 10;
-}
-
-.logo {
-  font-family: 'Cinzel', serif;
-  font-size: 3.5rem;
-  letter-spacing: 2px;
-  font-weight: 700;
-}
-
-.logo span {
-  font-size: 1.8rem;
-  vertical-align: sub;
-}
-
-.nav-links {
-  display: flex;
-  list-style: none;
-  gap: 2.5rem;
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: #b7a9c9;
-  font-size: 2.5rem;
-  transition: color 0.3s ease;
-}
-
-.nav-links a:hover,
-.nav-links a.active {
-  color: #ffffff;
-  text-shadow: 0 0 10px rgba(220, 180, 255, 0.6);
-}
-.nav-divider{
-    width: 100%;
-    height: 1px;
-    background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
-}
 
 /* Modal Wrapper */
 .container {

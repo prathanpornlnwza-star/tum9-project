@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zodiac</title>
+    <link rel="stylesheet" href="zodiac.css">
+</head>
+
+<body>
+    <div class="bg">
+        <div class="box1">
+            <button onclick="cs()" class="close">&times;</button>
+            <p class="p">✦ LUMORA ORACLE ✦</p>
+            <h1 class="H">Discover Your Fortune</h1>
+            <h2 class="H2">ให้ดวงดาวนำทางคุณ</h2>
+            <p class="b">วันเกิดของตุณ</p>
+            <br>
+            <div class="bd">
+                <input type="date" id="din" class="date">
+            </div>
+            <p class="w">เลือกสิ่งที่อยากรู้</p>
+            <br>
+            <div class="f">
+                <button class="btn" onclick="selectCategory('al', this)">ดูภาพรวม</button>
+                <button class="btn" onclick="selectCategory('love', this)">ความรัก</button>
+                <button class="btn" onclick="selectCategory('job', this)">การงาน</button>
+                <button class="btn" onclick="selectCategory('mony', this)">การเงิน</button>
+                <button class="btn" onclick="selectCategory('health', this)">สุขภาพ</button>
+                <button class="btn" onclick="selectCategory('luck', this)">โชคลาภ</button>
+            </div>
+            <div>
+                <button class="rs" onclick="rs()">✦ Reveal my fortune ✦</button>
+            </div>
+        </div>
+    </div>
+    <script src="zodiac.js"></script>
+</body>
+
+</html>
