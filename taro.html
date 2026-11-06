@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TUM.TAROT - เลือกหัวข้อทำนาย</title>
+  <link rel="stylesheet" href="taro.css" />
+  <!-- ฟอนต์ Cinzel และ Prompt เพื่อความขลังและอ่านง่าย -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Prompt:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- NAV -->
+  <nav class="navbar">
+    <div class="logo">TUM<span>9</span></div>
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#" class="active">Service</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+  <div class="nav-divider"></div>
+
+  <!-- MainContainer -->
+  <main class="container">
+    <div class="tarot-card-modal">
+      <header class="modal-header">
+        <p class="sub-brand">TUM . TAROT</p>
+        <h1 class="main-title">Tarot Reading</h1>
+        <p class="description">เลือกเรื่องที่คุณต้องการค้นหาคำตอบ แล้วตั้งจิตอธิษฐาน</p>
+      </header>
+
+      <!-- Category choice -->
+      <div class="category-grid">
+        <button type="button" class="category-btn" data-category="ความรัก">
+          <span class="icon"><img src="logo/cupid.png" alt=""></span>
+          <span class="label">ความรัก</span>
+        </button>
+        <button type="button" class="category-btn" data-category="การงาน">
+          <span class="icon"><img src="logo/airplane.png" alt=""></span>
+          <span class="label">การงาน</span>
+        </button>
+        <button type="button" class="category-btn" data-category="การเงิน">
+          <span class="icon"><img src="logo/diagram.png" alt=""></span>
+          <span class="label">การเงิน</span>
+        </button>
+        <button type="button" class="category-btn" data-category="การเรียน">
+          <span class="icon"><img src="logo/graduation-hat.png" alt=""></span>
+          <span class="label">การเรียน</span>
+        </button>
+        <button type="button" class="category-btn span-all" data-category="อนาคต">
+          <span class="icon"><img src="logo/hourglass.png" alt=""></span>
+          <span class="label">อนาคต</span>
+        </button>
+      </div>
+
+      <button type="button" id="continueBtn" class="continue-btn" disabled>
+        Continue
+      </button>
+    </div>
+
+  </main>
+
+  <script src="taro.js"></script>
+</body>
+</html>

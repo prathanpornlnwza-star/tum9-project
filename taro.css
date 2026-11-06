@@ -1,0 +1,380 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-family: 'Prompt', sans-serif;
+  color: #ffffff;
+  background: radial-gradient(circle at 50% 30%, #2b1145 0%, #120721 60%, #06020c 100%);
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* เอฟเฟกต์ละอองดาว/หมอกม่วงด้านหลัง */
+body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: 
+    radial-gradient(1.5px 1.5px at 20px 30px, #ffffff, rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 40px 70px, rgba(255,255,255,0.7), rgba(0,0,0,0)),
+    radial-gradient(1.5px 1.5px at 90px 40px, #e9bfff, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 150px 120px, rgba(255,255,255,0.9), rgba(0,0,0,0));
+  background-size: 200px 200px;
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 4rem;
+  z-index: 10;
+}
+
+.logo {
+  font-family: 'Cinzel', serif;
+  font-size: 3.5rem;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+.logo span {
+  font-size: 1.8rem;
+  vertical-align: sub;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2.5rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #b7a9c9;
+  font-size: 2.5rem;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(220, 180, 255, 0.6);
+}
+.nav-divider{
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
+}
+
+/* Modal Wrapper */
+.container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  z-index: 5;
+}
+
+.tarot-card-modal {
+  width: 100%;
+  max-width: 650px;
+  background: rgba(30, 16, 50, 0.55);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(193, 154, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5), inset 0 0 15px rgba(162, 107, 255, 0.15);
+  border-radius: 28px;
+  padding: 3.5rem 3rem;
+  text-align: center;
+}
+
+/* Header Text */
+.sub-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.5rem;
+  letter-spacing: 4px;
+  color: #c9a4ff;
+  margin-bottom: 0.3rem;
+}
+
+.main-title {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #ffffff;
+  text-shadow: 0 0 20px rgba(190, 130, 255, 0.4);
+  margin-bottom: 0.6rem;
+}
+
+.description {
+  font-size: 1.25rem;
+  font-weight: 300;
+  color: #d1c4e9;
+  margin-bottom: 2rem;
+}
+
+/* Buttons Grid */
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.9rem;
+  margin-bottom: 2rem;
+}
+
+.category-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  padding: 0.85rem 1rem;
+  color: #eae1f8;
+  font-family: 'Prompt', sans-serif;
+  font-size: 1.25rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  transition: all 0.25s ease;
+  backdrop-filter: blur(4px);
+}
+
+.category-btn .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+}
+
+.category-btn img,
+.category-btn svg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: invert(85%) sepia(20%) saturate(1800%) hue-rotate(220deg) brightness(105%) contrast(105%) drop-shadow(0 0 6px rgba(212, 165, 255, 0.6));
+  transition: filter 0.25s ease, transform 0.25s ease;
+}
+.category-btn:hover img,
+.category-btn.selected img {
+  filter: invert(100%) drop-shadow(0 0 10px rgba(235, 210, 255, 0.95));
+  transform: scale(1.08);
+}
+
+.category-btn:hover {
+  background: rgba(186, 131, 255, 0.18);
+  border-color: rgba(206, 162, 255, 0.45);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(150, 75, 255, 0.2);
+}
+
+.category-btn.selected {
+  background: linear-gradient(135deg, rgba(162, 89, 255, 0.4), rgba(108, 43, 217, 0.6));
+  border-color: #d4a5ff;
+  color: #ffffff;
+  box-shadow: 0 0 16px rgba(193, 128, 255, 0.45);
+  transform: scale(1.02);
+}
+
+.span-all {
+  grid-column: span 2;
+}
+
+/* Continue Button */
+.continue-btn {
+  width: 100%;
+  padding: 0.85rem;
+  font-family: 'Cinzel', serif;
+  font-size: 1.5rem;
+  font-style: italic;
+  font-weight: 700;
+  color: #ffffff;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.1));
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(6px);
+}
+
+.continue-btn:not(:disabled) {
+  background: linear-gradient(90deg, #9b51e0, #6722a8);
+  border-color: #dab2ff;
+  box-shadow: 0 0 20px rgba(155, 81, 224, 0.6);
+}
+
+.continue-btn:not(:disabled):hover {
+  transform: translateY(-1px);
+  box-shadow: 0 0 25px rgba(175, 105, 245, 0.8);
+}
+
+.continue-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+/* คลาสสำหรับซ่อน/แสดงและทำ Animation สลับหน้า */
+.hidden {
+  display: none !important;
+}
+
+#stepCategory,
+#stepCards {
+  animation: fadeIn 0.45s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- STEP 2: หน้าเลือกจำนวนไพ่ --- */
+.cards-selection-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 950px;
+  text-align: center;
+  padding: 1rem;
+}
+
+.selected-topic-pill {
+  font-size: 1.15rem;
+  color: #d1c4e9;
+  margin-bottom: 2rem;
+}
+
+.selected-topic-pill strong {
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(220, 180, 255, 0.8);
+}
+
+.cards-headline {
+  font-size: 1.65rem;
+  font-weight: 400;
+  color: #f7f2ff;
+  margin-bottom: 0.35rem;
+  letter-spacing: 0.5px;
+}
+
+.sub-instruction {
+  font-size: 1.05rem;
+  color: #bfaedc;
+  margin-bottom: 3.5rem;
+}
+
+/* กล่องจัดเรียงไพ่ 4 ตัวเลือก */
+.tarot-options-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.2rem;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.tarot-card-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.card-inner {
+  width: 135px;
+  height: 230px;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.65), 0 0 15px rgba(124, 58, 237, 0.25);
+  border: 1px solid rgba(220, 185, 255, 0.35);
+  transition: all 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.card-inner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.roman-label {
+  font-family: 'Cinzel', serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-top: 1.2rem;
+  letter-spacing: 2px;
+  text-shadow: 0 0 14px rgba(255, 255, 255, 0.4);
+  transition: all 0.3s ease;
+}
+
+/* Hover: ไพ่ลอยขึ้นและเรืองแสง */
+.tarot-card-card:hover .card-inner {
+  transform: translateY(-16px) scale(1.05);
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.85), 0 0 30px rgba(192, 132, 252, 0.85);
+  border-color: #ffd700;
+}
+
+.tarot-card-card:hover .roman-label {
+  color: #ffe89e;
+  text-shadow: 0 0 18px rgba(255, 215, 0, 0.8);
+  transform: translateY(-4px);
+}
+
+/* ปุ่มย้อนกลับ */
+.back-link {
+  margin-top: 3.5rem;
+  background: transparent;
+  border: none;
+  color: #a491c6;
+  font-family: 'Prompt', sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.back-link:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+@media (max-width: 680px) {
+  .tarot-options-grid {
+    gap: 1.2rem;
+  }
+  .card-inner {
+    width: 95px;
+    height: 160px;
+  }
+  .roman-label {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    padding: 1.2rem 1.5rem;
+  }
+  .nav-links {
+    display: none;
+  }
+}

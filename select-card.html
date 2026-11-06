@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TUM.TAROT - เลือกจำนวนไพ่</title>
+  <link rel="stylesheet" href="select-card.css" />
+  <!-- ฟอนต์ Cinzel และ Prompt -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Prompt:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- แถบเมนูด้านบน -->
+  <nav class="navbar">
+    <div class="logo">TUM<span>9</span></div>
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#" class="active">Service</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+  <div class="nav-divider"></div>
+
+  <main class="reading-container">
+    <!-- หัวข้อแสดงเรื่องที่เลือกมาจากหน้าแรก -->
+    <div class="reading-header">
+      <p class="sub-title">TUM . TAROT</p>
+      <h1 class="main-title">Tarot Reading</h1>
+      <p class="category-display">เรื่องที่เลือก: <span id="currentTopic">ความรัก</span></p>
+      <h2 class="section-title">เลือกจำนวนไพ่</h2>
+      <p class="instruction">แล้วตั้งจิตถามในใจ</p>
+    </div>
+
+    <!-- ส่วนตัวเลือกไพ่ทั้ง 4 ชุด (I, III, V, X) -->
+    <div class="cards-deck-wrapper">
+      <!-- 1 ใบ -->
+      <div class="card-item" data-count="1">
+        <div class="card-box">
+          <img src="logo/Taro-removebg-preview.png" alt="ไพ่ 1 ใบ" class="tarot-img" />
+          <div class="card-glow"></div>
+        </div>
+        <span class="roman-numeral">I</span>
+        <span class="card-desc">1 ใบ (คำตอบเร็ว/ใช่-ไม่ใช่)</span>
+      </div>
+
+      <!-- 3 ใบ -->
+      <div class="card-item" data-count="3">
+        <div class="card-box">
+          <img src="logo/Taro-removebg-preview.png" alt="ไพ่ 3 ใบ" class="tarot-img" />
+          <div class="card-glow"></div>
+        </div>
+        <span class="roman-numeral">III</span>
+        <span class="card-desc">3 ใบ (อดีต - ปัจจุบัน - อนาคต)</span>
+      </div>
+
+      <!-- 5 ใบ -->
+      <div class="card-item" data-count="5">
+        <div class="card-box">
+          <img src="logo/Taro-removebg-preview.png" alt="ไพ่ 5 ใบ" class="tarot-img" />
+          <div class="card-glow"></div>
+        </div>
+        <span class="roman-numeral">V</span>
+        <span class="card-desc">5 ใบ (วิเคราะห์สถานการณ์เชิงลึก)</span>
+      </div>
+
+      <!-- 10 ใบ -->
+      <div class="card-item" data-count="10">
+        <div class="card-box">
+          <img src="logo/Taro-removebg-preview.png" alt="ไพ่ 10 ใบ" class="tarot-img" />
+          <div class="card-glow"></div>
+        </div>
+        <span class="roman-numeral">X</span>
+        <span class="card-desc">10 ใบ (Celtic Cross ภาพรวมชีวิต)</span>
+      </div>
+    </div>
+  </main>
+
+</body>
+<script src="select-card.js"></script>
+</html>
