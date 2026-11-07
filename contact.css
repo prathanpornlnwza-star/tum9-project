@@ -153,7 +153,18 @@
     }
 }
 /* css ของ contact */
+.contact-page {
+    background: #0d0b1e url("service-img/about.png") center bottom / cover fixed no-repeat;
+}
+
+.contact-page::before,
+.contact-page::after {
+    display: none;
+}
+
 .contact-container {
+    position: relative;
+    z-index: 1;
     width: 100%;
     min-height: 450px;
 

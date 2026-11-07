@@ -32,9 +32,14 @@ body {
     color: #fff;
     font-family: 'Prompt', sans-serif;
     background-color: #080511;
-    background-image:
-        radial-gradient(ellipse at 50% 30%, #211033 0%, #10091b 48%, #080511 100%);
     background-attachment: fixed;
+}
+
+.cosmos {
+  position: fixed;
+  z-index: 0;
+  inset: 1px;
+  background: #080511 url("backgroud/Homepage.png") center center / 100% auto no-repeat;
 }
 
 body::before {
@@ -156,6 +161,8 @@ body::after {
 }
 
 .container {
+  position: relative;
+  z-index: 1;
   min-height: calc(100svh - 100px);
   padding: 80px var(--page-gutter) 120px;
   display: flex;
