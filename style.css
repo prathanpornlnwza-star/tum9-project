@@ -39,7 +39,6 @@ body {
   position: fixed;
   z-index: 0;
   inset: 1px;
-  background: #080511 url("backgroud/Homepage.png") center center / 100% auto no-repeat;
 }
 
 body::before {

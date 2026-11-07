@@ -1,20 +1,4 @@
-/* ==========================================================
-   SERVICE PAGE
-   ========================================================== */
 
-/* ---------- Background ---------- */
-.service-page {
-  background: #0d0b1e url("service-img/about.png") center bottom / cover fixed no-repeat;
-}
-
-.service-page .cosmos {
-  display: none;
-}
-
-.service-page::before,
-.service-page::after {
-  display: none;
-}
 
 
 /* ---------- Stage & Constellation ---------- */
