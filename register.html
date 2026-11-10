@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>สมัครสมาชิก | TUM9</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="account.css">
+  <link rel="stylesheet" href="home-chat.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container-nav">
+      <a class="logo" href="index.html"><span>TUM9</span></a>
+      <nav aria-label="Main navigation">
+        <ul class="nbr">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="fortune.html">Fortune</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <ul class="nbr account-links">
+          <li><a href="login.html">Login</a></li>
+          <li><a href="register.html" aria-current="page">Register</a></li>
+          <li><a href="profile.html">Profile</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main class="account-main">
+    <section class="account-card" aria-labelledby="page-title">
+      <p class="account-eyebrow">JOIN TUM9</p>
+      <h1 id="page-title">สมัครสมาชิก</h1>
+      <p class="account-intro">เริ่มต้นเดินทางไปกับคำทำนายของคุณ</p>
+      <form class="account-form">
+        <label for="register-name">ชื่อที่ใช้แสดง</label>
+        <input id="register-name" name="name" autocomplete="name" placeholder="ชื่อของคุณ" required>
+        <label for="register-email">อีเมล</label>
+        <input id="register-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+        <label for="register-password">รหัสผ่าน</label>
+        <input id="register-password" name="password" type="password" autocomplete="new-password" placeholder="ตั้งรหัสผ่าน" required>
+        <button type="button" class="account-submit" disabled>สมัครสมาชิกเร็ว ๆ นี้</button>
+      </form>
+      <p class="account-notice">หน้านี้เป็นตัวอย่างหน้าจอ ยังไม่มีระบบสมัครสมาชิกหรือจัดเก็บข้อมูล</p>
+      <p class="account-switch">มีบัญชีอยู่แล้ว? <a href="login.html">เข้าสู่ระบบ</a></p>
+    </section>
+  </main>
+  <script src="home-chat.js"></script>
+</body>
+</html>

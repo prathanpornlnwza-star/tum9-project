@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>เข้าสู่ระบบ | TUM9</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="account.css">
+  <link rel="stylesheet" href="home-chat.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container-nav">
+      <a class="logo" href="index.html"><span>TUM9</span></a>
+      <nav aria-label="Main navigation">
+        <ul class="nbr">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="fortune.html">Fortune</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <ul class="nbr account-links">
+          <li><a href="login.html" aria-current="page">Login</a></li>
+          <li><a href="register.html">Register</a></li>
+          <li><a href="profile.html">Profile</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main class="account-main">
+    <section class="account-card" aria-labelledby="page-title">
+      <p class="account-eyebrow">WELCOME BACK</p>
+      <h1 id="page-title">เข้าสู่ระบบ</h1>
+      <p class="account-intro">กลับมาเปิดประตูสู่คำทำนายของคุณ</p>
+      <form class="account-form">
+        <label for="login-email">อีเมล</label>
+        <input id="login-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+        <label for="login-password">รหัสผ่าน</label>
+        <input id="login-password" name="password" type="password" autocomplete="current-password" placeholder="กรอกรหัสผ่าน" required>
+        <button type="button" class="account-submit" disabled>เข้าสู่ระบบเร็ว ๆ นี้</button>
+      </form>
+      <p class="account-notice">หน้านี้เป็นตัวอย่างหน้าจอ ยังไม่มีระบบเข้าสู่ระบบหรือจัดเก็บข้อมูล</p>
+      <p class="account-switch">ยังไม่มีบัญชี? <a href="register.html">สมัครสมาชิก</a></p>
+    </section>
+  </main>
+  <script src="home-chat.js"></script>
+</body>
+</html>
