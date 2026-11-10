@@ -8,6 +8,7 @@
 
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="fortune.css">
+  <link rel="stylesheet" href="home-chat.css">
 
 </head>
 
@@ -38,15 +39,14 @@
 
 
   <!-- ========== เนื้อหาหลัก ========== -->
-  <!-- data-slot: 0 = ซ้าย | 1 = หน้ากลาง | 2 = ขวา | 3 = หลังกลาง -->
-  <main class="service-stage" data-carousel aria-label="บริการของ TUM9">
+  <main class="service-stage" aria-label="บริการของ TUM9">
 
     <!-- ดวงดาวจางๆ เป็นลายพื้นหลัง -->
     <img class="constellation" src="service-img/ดาว.png" alt="" aria-hidden="true">
 
 
-    <!-- การ์ด 1: Birth Chart (ซ้าย) -->
-    <article class="service-card service-card--birth" data-slot="0">
+    <!-- การ์ด 1: Birth Chart -->
+    <article class="service-card service-card--birth">
       <img class="service-card__arch" src="service-img/กรอปหลัก.png" alt="" aria-hidden="true">
       <img class="service-card__visual service-card__visual--skull" src="service-img/หัวกระโหลก.png" alt="">
 
@@ -57,8 +57,8 @@
     </article>
 
 
-    <!-- การ์ด 2: Blood Type Reading (หลังกลาง) -->
-    <article class="service-card service-card--blood" data-slot="3">
+    <!-- การ์ด 2: Blood Type Reading -->
+    <article class="service-card service-card--blood">
       <img class="service-card__arch" src="service-img/กรอป.png" alt="" aria-hidden="true">
       <img class="service-card__visual service-card__visual--bottle" src="service-img/ขวด.png" alt="">
 
@@ -69,8 +69,8 @@
     </article>
 
 
-    <!-- การ์ด 3: Zodiac Signs (ขวา) -->
-    <a class="service-card service-card--zodiac" href="zodiac.html" data-slot="2">
+    <!-- การ์ด 3: Zodiac Signs -->
+    <a class="service-card service-card--zodiac" href="#">
       <img class="service-card__arch" src="service-img/กรอปหลัก.png" alt="" aria-hidden="true">
       <img class="service-card__visual service-card__visual--zodiac" src="service-img/ตาราง.png" alt="">
 
@@ -81,8 +81,8 @@
     </a>
 
 
-    <!-- การ์ด 4: Tarot Reading (หน้ากลาง) -->
-    <a class="service-card service-card--tarot" href="taro.html" data-slot="1">
+    <!-- การ์ด 4: Tarot Reading -->
+    <a class="service-card service-card--tarot" href="taro.html">
       <img class="service-card__arch" src="service-img/กรอปหลัก.png" alt="" aria-hidden="true">
       <img class="service-card__visual service-card__visual--tarot" src="service-img/ไพ่.png" alt="">
 
@@ -93,7 +93,6 @@
     </a>
 
   </main>
-
-  <script src="service.js"></script>
+  <script src="home-chat.js"></script>
 </body>
 </html>

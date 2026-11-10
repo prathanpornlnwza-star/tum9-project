@@ -5,9 +5,14 @@
 .service-stage {
   position: relative;
   z-index: 1;
-  width: min(1120px, calc(100% - 48px));
-  min-height: 730px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: center;
+  gap: 20px;
+  width: min(1200px, calc(100% - 48px));
+  min-height: calc(100svh - 100px);
   margin: 0 auto;
+  padding: 48px 0;
 }
 
 .constellation {
@@ -26,11 +31,12 @@
 /* ---------- Card: base ---------- */
 
 .service-card {
-  position: absolute;
+  position: relative;
   z-index: 1;
   display: block;
-  width: 286px;
+  width: min(286px, 100%);
   height: 475px;
+  margin: 0 auto;
   color: #e1d4e8;
   text-decoration: none;
   filter: drop-shadow(0 16px 20px rgba(0, 0, 0, .22));
@@ -43,6 +49,37 @@
   width: 100%;
   height: 100%;
   object-fit: fill;
+}
+
+.service-card--birth::before,
+.service-card--zodiac::before,
+.service-card--tarot::before {
+  position: absolute;
+  z-index: 0;
+  top: 48px;
+  left: 50%;
+  width: 60px;
+  height: 60px;
+  content: "";
+  border: 2px solid rgba(147, 143, 155, .8);
+  border-radius: 50%;
+  background: #28143a;
+  transform: translateX(-50%);
+}
+
+.service-card--birth::after,
+.service-card--zodiac::after,
+.service-card--tarot::after {
+  position: absolute;
+  z-index: 0;
+  top: 58px;
+  left: 50%;
+  width: 29px;
+  height: 38px;
+  content: "";
+  background: #190a29;
+  clip-path: polygon(50% 0, 62% 38%, 100% 50%, 62% 62%, 50% 100%, 38% 62%, 0 50%, 38% 38%);
+  transform: translateX(-50%);
 }
 
 .service-card__visual {
@@ -84,11 +121,6 @@
 
 
 /* ---------- Card: Birth ---------- */
-.service-card--birth {
-  top: 130px;
-  left: 20px;
-}
-
 .service-card__visual--skull {
   top: 110px;
   left: 8px;
@@ -104,9 +136,7 @@
 
 /* ---------- Card: Blood ---------- */
 .service-card--blood {
-  top: 45px;
-  left: calc(50% - 143px);
-  height: 495px;
+  height: 475px;
   transform: none;
 }
 
@@ -122,15 +152,15 @@
 }
 
 .service-card--blood .service-card__copy {
-  top: 51px;
-  left: -62px;
-  right: -62px;
+  bottom: 42px;
+  left: 8px;
+  right: 8px;
   text-align: center;
 }
 
 .service-card--blood .service-card__copy h1 {
-  color: #d3c7d5;
-  font-size: 42px;
+  color: inherit;
+  font-size: clamp(22px, 2.3vw, 30px);
 }
 
 .service-card--blood .service-card__copy p {
@@ -140,12 +170,6 @@
 
 
 /* ---------- Card: Zodiac ---------- */
-.service-card--zodiac {
-  top: 130px;
-  right: auto;
-  left: calc(100% - 306px);
-}
-
 .service-card__visual--zodiac {
   top: 120px;
   left: 12px;
@@ -166,9 +190,7 @@
 /* ---------- Card: Tarot ---------- */
 .service-card--tarot {
   z-index: 2;
-  top: 418px;
-  left: calc(50% - 143px);
-  height: 415px;
+  height: 475px;
   transform: none;
 }
 
@@ -194,67 +216,25 @@
 
 
 /* ---------- Hover / Focus ---------- */
-.service-card--zodiac:hover,
-.service-card--tarot:hover,
-.service-card--zodiac:focus-visible,
-.service-card--tarot:focus-visible {
+.service-card:hover,
+.service-card:focus-visible {
   filter: drop-shadow(0 0 16px rgba(226, 177, 255, .6))
           drop-shadow(0 16px 20px rgba(0, 0, 0, .28));
 }
 
+.service-card--birth:hover,
+.service-card--blood:hover,
 .service-card--zodiac:hover,
-.service-card--zodiac:focus-visible {
-  transform: translateY(-7px);
-}
-
 .service-card--tarot:hover,
+.service-card--birth:focus-visible,
+.service-card--blood:focus-visible,
+.service-card--zodiac:focus-visible,
 .service-card--tarot:focus-visible {
   transform: translateY(-7px);
 }
 
-
-/* ---------- Click carousel (desktop) ---------- */
-@media (min-width: 901px) {
-  .service-card { cursor: pointer; }
-
-  .service-stage[data-carousel] .service-card {
-    transition: top 700ms cubic-bezier(.65, 0, .35, 1),
-                left 700ms cubic-bezier(.65, 0, .35, 1),
-                transform 260ms ease,
-                filter 260ms ease;
-  }
-
-  /* 4 ช่อง: 0 ซ้าย | 1 หน้ากลาง | 2 ขวา | 3 หลังกลาง */
-  .service-stage[data-carousel] .service-card[data-slot="0"] { top: 130px; left: 20px;                z-index: 1; }
-  .service-stage[data-carousel] .service-card[data-slot="1"] { top: 418px; left: calc(50% - 143px);   z-index: 2; }
-  .service-stage[data-carousel] .service-card[data-slot="2"] { top: 130px; left: calc(100% - 306px);  z-index: 1; }
-  .service-stage[data-carousel] .service-card[data-slot="3"] { top: 45px;  left: calc(50% - 143px);   z-index: 1; }
-
-  /* ขั้นรวมเข้ากลาง */
-  .service-stage.is-gathering .service-card[data-slot] {
-    top: 200px;
-    left: calc(50% - 143px);
-    z-index: 1;
-    transition-duration: 450ms;
-  }
-
-  .service-stage.is-gathering .service-card.is-clicked {
-    z-index: 3;
-  }
-
-  /* ดาวและเส้นกลุ่มดาวสว่างขึ้นตอนรวม */
-  .constellation {
-    transition: opacity 500ms ease, transform 700ms ease;
-  }
-
-  .service-stage.is-gathering .constellation {
-    opacity: .95;
-    transform: translateX(-50%) scale(1.06);
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
-  .service-stage[data-carousel] .service-card,
+  .service-card,
   .constellation {
     transition: none !important;
   }
@@ -265,61 +245,54 @@
    RESPONSIVE
    ========================================================== */
 
-/* ---------- Tablet (≤ 900px) ---------- */
-@media (max-width: 900px) {
+/* ---------- Tablet and compact desktop (≤ 1100px) ---------- */
+@media (max-width: 1100px) {
   .service-stage {
+    grid-template-columns: repeat(2, minmax(0, 286px));
+    justify-content: center;
     width: min(640px, calc(100% - 32px));
-    min-height: 1320px;
+    min-height: 0;
+    gap: 28px 20px;
+    overflow: clip;
   }
 
   .constellation {
-    top: 270px;
+    top: 50%;
     width: 175%;
+    transform: translate(-50%, -50%);
   }
-
-  .service-card--birth  { top: 90px; left: 0; }
-  .service-card--zodiac { top: 90px; left: auto; right: 0; }
-  .service-card--blood  { top: 492px; left: 50%; transform: translateX(-50%); }
-  .service-card--tarot  { top: 865px; left: 50%; transform: translateX(-50%); }
 }
 
 
 /* ---------- Mobile (≤ 620px) ---------- */
 @media (max-width: 620px) {
   .service-stage {
+    grid-template-columns: minmax(0, 286px);
+    justify-content: center;
     width: min(330px, calc(100% - 28px));
-    min-height: 1810px;
+    min-height: 0;
+    gap: 18px;
   }
 
   .constellation {
-    top: 190px;
-    width: 430%;
-    opacity: .32;
+    top: 40px;
+    width: 175%;
+    opacity: .4;
+    transform: translateX(-50%);
   }
 
   .service-card {
     width: 286px;
   }
 
-  /* การ์ดทุกใบเรียงกลางจอ */
-  .service-card--birth,
-  .service-card--zodiac,
-  .service-card--blood,
-  .service-card--tarot {
-    right: auto;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  .service-card--birth  { top: 52px; }
-  .service-card--blood  { top: 460px; }
-  .service-card--zodiac { top: 875px; }
-  .service-card--tarot  { top: 1280px; }
-
+  .service-card--birth:hover,
+  .service-card--blood:hover,
   .service-card--zodiac:hover,
   .service-card--zodiac:focus-visible,
   .service-card--tarot:hover,
+  .service-card--birth:focus-visible,
+  .service-card--blood:focus-visible,
   .service-card--tarot:focus-visible {
-    transform: translateX(-50%) translateY(-6px);
+    transform: translateY(-6px);
   }
 }
