@@ -1,298 +1,232 @@
-
-
-
-/* ---------- Stage & Constellation ---------- */
 .service-stage {
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   align-items: center;
-  gap: 20px;
-  width: min(1200px, calc(100% - 48px));
+  gap: clamp(12px, 1.6vw, 22px);
+  width: min(1240px, calc(100% - 48px));
   min-height: calc(100svh - 100px);
   margin: 0 auto;
   padding: 48px 0;
 }
 
-.constellation {
-  position: absolute;
-  z-index: 0;
-  top: 165px;
-  left: 50%;
-  width: min(1250px, 122%);
-  max-width: none;
-  opacity: .48;
-  pointer-events: none;
-  transform: translateX(-50%);
-}
-
-
-/* ---------- Card: base ---------- */
-
 .service-card {
   position: relative;
-  z-index: 1;
   display: block;
-  width: min(286px, 100%);
-  height: 475px;
-  margin: 0 auto;
-  color: #e1d4e8;
-  text-decoration: none;
-  filter: drop-shadow(0 16px 20px rgba(0, 0, 0, .22));
-  transition: transform 260ms ease, filter 260ms ease;
-}
-
-.service-card__arch {
-  position: absolute;
-  inset: 0;
   width: 100%;
-  height: 100%;
-  object-fit: fill;
+  height: clamp(380px, 32vw, 450px);
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid rgba(218, 179, 255, .52);
+  border-radius: 120px 120px 18px 18px;
+  color: #f4edf7;
+  background: linear-gradient(160deg, #392451, #130b20);
+  box-shadow: 0 16px 30px rgba(0, 0, 0, .35), inset 0 0 22px rgba(219, 180, 255, .08);
+  text-decoration: none;
+  isolation: isolate;
+  transition: transform 280ms ease, border-color 280ms ease, box-shadow 280ms ease;
 }
 
-.service-card--birth::before,
-.service-card--zodiac::before,
-.service-card--tarot::before {
+.service-card__galaxy {
   position: absolute;
-  z-index: 0;
-  top: 48px;
-  left: 50%;
-  width: 60px;
-  height: 60px;
+  z-index: -2;
+  inset: 0;
+  background-color: #100b26;
+  background-image:
+    radial-gradient(ellipse at 50% 43%, rgba(198, 129, 255, .72), transparent 12%),
+    radial-gradient(ellipse at 48% 47%, rgba(116, 65, 195, .76), transparent 32%),
+    radial-gradient(ellipse at 72% 25%, rgba(72, 131, 255, .35), transparent 28%),
+    radial-gradient(ellipse at 24% 72%, rgba(222, 97, 255, .32), transparent 30%),
+    radial-gradient(circle at 15% 23%, #fff 0 1px, transparent 2px),
+    radial-gradient(circle at 82% 17%, #fff 0 1px, transparent 2px),
+    radial-gradient(circle at 76% 66%, #e8caff 0 1px, transparent 2px),
+    radial-gradient(circle at 28% 42%, #fff 0 1px, transparent 2px),
+    radial-gradient(circle at 58% 83%, #fff 0 1px, transparent 2px),
+    radial-gradient(circle at 91% 49%, #d7caff 0 1px, transparent 2px),
+    linear-gradient(155deg, #090a20, #24133f 55%, #100b26);
+  transition: transform 500ms ease, filter 300ms ease;
+}
+
+.service-card--zodiac .service-card__galaxy {
+  background-image:
+    radial-gradient(ellipse at 44% 51%, rgba(195, 139, 255, .8), transparent 11%),
+    radial-gradient(ellipse at 49% 49%, rgba(132, 81, 226, .8), transparent 30%),
+    radial-gradient(ellipse at 70% 30%, rgba(235, 117, 255, .4), transparent 28%),
+    radial-gradient(ellipse at 23% 69%, rgba(80, 104, 238, .45), transparent 32%),
+    radial-gradient(circle at 12% 18%, #fff 0 1px, transparent 2px),
+    radial-gradient(circle at 85% 22%, #f6e8ff 0 1px, transparent 2px),
+    radial-gradient(circle at 78% 72%, #fff 0 1px, transparent 2px),
+    radial-gradient(circle at 31% 37%, #e7d0ff 0 1px, transparent 2px),
+    radial-gradient(circle at 59% 84%, #fff 0 1px, transparent 2px),
+    linear-gradient(145deg, #100923, #321455 52%, #11132f);
+}
+
+.service-card--birth .service-card__galaxy {
+  background-image:
+    radial-gradient(ellipse at 52% 39%, rgba(255, 171, 232, .68), transparent 13%),
+    radial-gradient(ellipse at 55% 45%, rgba(147, 84, 214, .77), transparent 31%),
+    radial-gradient(ellipse at 21% 28%, rgba(87, 155, 255, .45), transparent 29%),
+    radial-gradient(ellipse at 83% 72%, rgba(207, 89, 255, .35), transparent 30%),
+    radial-gradient(circle at 17% 61%, #fff 0 1px, transparent 2px),
+    radial-gradient(circle at 79% 19%, #fff 0 1px, transparent 2px),
+    radial-gradient(circle at 66% 81%, #e8caff 0 1px, transparent 2px),
+    radial-gradient(circle at 35% 20%, #fff 0 1px, transparent 2px),
+    linear-gradient(150deg, #111025, #29143e 55%, #10112c);
+}
+
+.service-card--tarot .service-card__galaxy {
+  background-image:
+    radial-gradient(ellipse at 38% 48%, rgba(159, 135, 255, .72), transparent 12%),
+    radial-gradient(ellipse at 43% 50%, rgba(84, 74, 194, .8), transparent 32%),
+    radial-gradient(ellipse at 78% 27%, rgba(74, 174, 255, .42), transparent 29%),
+    radial-gradient(ellipse at 18% 77%, rgba(174, 78, 255, .44), transparent 30%),
+    radial-gradient(circle at 14% 25%, #fff 0 1px, transparent 2px),
+    radial-gradient(circle at 86% 18%, #fff 0 1px, transparent 2px),
+    radial-gradient(circle at 70% 72%, #e4d7ff 0 1px, transparent 2px),
+    radial-gradient(circle at 28% 36%, #fff 0 1px, transparent 2px),
+    linear-gradient(145deg, #080d24, #1d194c 53%, #160c30);
+}
+
+.service-card--daily .service-card__galaxy {
+  background-image:
+    radial-gradient(ellipse at 56% 44%, rgba(255, 194, 238, .7), transparent 12%),
+    radial-gradient(ellipse at 51% 49%, rgba(171, 92, 224, .75), transparent 31%),
+    radial-gradient(ellipse at 19% 34%, rgba(255, 151, 213, .38), transparent 29%),
+    radial-gradient(ellipse at 81% 75%, rgba(87, 118, 255, .4), transparent 31%),
+    radial-gradient(circle at 14% 19%, #fff 0 1px, transparent 2px),
+    radial-gradient(circle at 82% 24%, #fff 0 1px, transparent 2px),
+    radial-gradient(circle at 71% 64%, #ecd6ff 0 1px, transparent 2px),
+    radial-gradient(circle at 29% 78%, #fff 0 1px, transparent 2px),
+    linear-gradient(155deg, #160d2d, #32153e 52%, #10122f);
+}
+
+.service-card::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  border-radius: inherit;
+  background:
+    linear-gradient(180deg, rgba(13, 7, 24, .08) 25%, rgba(15, 8, 25, .16) 43%, rgba(14, 8, 23, .95) 100%),
+    linear-gradient(0deg, rgba(67, 28, 94, .2), transparent 58%);
   content: "";
-  border: 2px solid rgba(147, 143, 155, .8);
-  border-radius: 50%;
-  background: #28143a;
-  transform: translateX(-50%);
-}
-
-.service-card--birth::after,
-.service-card--zodiac::after,
-.service-card--tarot::after {
-  position: absolute;
-  z-index: 0;
-  top: 58px;
-  left: 50%;
-  width: 29px;
-  height: 38px;
-  content: "";
-  background: #190a29;
-  clip-path: polygon(50% 0, 62% 38%, 100% 50%, 62% 62%, 50% 100%, 38% 62%, 0 50%, 38% 38%);
-  transform: translateX(-50%);
-}
-
-.service-card__visual {
-  position: absolute;
-  z-index: 1;
-  object-fit: contain;
 }
 
 .service-card__copy {
   position: absolute;
   z-index: 2;
-  left: 18px;
-  right: 18px;
-  color: #d5c7dc;
-  text-shadow: 0 2px 5px rgba(11, 3, 17, .8);
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  padding: 22px 18px 24px;
+  color: #f4edf7;
+  text-align: center;
+  text-shadow: 0 2px 10px #080511;
 }
 
 .service-card__copy h1,
 .service-card__title {
   display: block;
   margin: 0;
+  color: #f8edff;
   font-family: Georgia, 'Times New Roman', serif;
-  font-size: 39px;
-  font-weight: 400;
-  line-height: 1;
-  letter-spacing: -1.5px;
+  font-size: clamp(24px, 2.15vw, 32px);
+  font-weight: 500;
+  line-height: 1.12;
+  letter-spacing: -.5px;
 }
 
 .service-card__copy p,
 .service-card__text {
   display: block;
-  margin-top: 12px;
-  color: #f4edf7;
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: 16px;
-  font-style: italic;
-  line-height: 1.35;
+  margin: 10px 0 0;
+  color: #e7d8f1;
+  font-family: 'Prompt', sans-serif;
+  font-size: clamp(13px, 1.05vw, 15px);
+  font-style: normal;
+  font-weight: 300;
+  line-height: 1.65;
 }
 
-
-/* ---------- Card: Birth ---------- */
-.service-card__visual--skull {
-  top: 110px;
-  left: 8px;
-  width: calc(100% - 16px);
-  height: 200px;
-}
-
-.service-card--birth .service-card__copy {
-  bottom: 28px;
-  text-align: center;
-}
-
-
-/* ---------- Card: Blood ---------- */
-.service-card--blood {
-  height: 475px;
-  transform: none;
-}
-
-.service-card--blood .service-card__arch {
-  opacity: .82;
-}
-
-.service-card__visual--bottle {
-  top: 132px;
-  left: 5%;
-  width: 90%;
-  height: 260px;
-}
-
-.service-card--blood .service-card__copy {
-  bottom: 42px;
-  left: 8px;
-  right: 8px;
-  text-align: center;
-}
-
-.service-card--blood .service-card__copy h1 {
-  color: inherit;
-  font-size: clamp(22px, 2.3vw, 30px);
-}
-
-.service-card--blood .service-card__copy p {
-  margin-top: 7px;
-  text-align: center;
-}
-
-
-/* ---------- Card: Zodiac ---------- */
-.service-card__visual--zodiac {
-  top: 120px;
-  left: 12px;
-  width: calc(100% - 24px);
-  height: 170px;
-}
-
-.service-card--zodiac .service-card__copy {
-  bottom: 62px;
-  text-align: center;
-}
-
-.service-card--zodiac .service-card__text {
-  margin-top: 9px;
-}
-
-
-/* ---------- Card: Tarot ---------- */
-.service-card--tarot {
-  z-index: 2;
-  height: 475px;
-  transform: none;
-}
-
-.service-card--tarot .service-card__arch {
-  opacity: .88;
-}
-
-.service-card__visual--tarot {
-  top: 35px;
-  left: -29px;
-  width: calc(100% + 58px);
-  height: 235px;
-}
-
-.service-card--tarot .service-card__copy {
-  bottom: 42px;
-  text-align: center;
-}
-
-.service-card--tarot .service-card__title {
-  font-size: 43px;
-}
-
-
-/* ---------- Hover / Focus ---------- */
 .service-card:hover,
 .service-card:focus-visible {
-  filter: drop-shadow(0 0 16px rgba(226, 177, 255, .6))
-          drop-shadow(0 16px 20px rgba(0, 0, 0, .28));
+  z-index: 2;
+  transform: translateY(-8px);
+  border-color: #efc9ff;
+  box-shadow: 0 20px 38px rgba(0, 0, 0, .45), 0 0 26px rgba(190, 130, 255, .48);
 }
 
-.service-card--birth:hover,
-.service-card--blood:hover,
-.service-card--zodiac:hover,
-.service-card--tarot:hover,
-.service-card--birth:focus-visible,
-.service-card--blood:focus-visible,
-.service-card--zodiac:focus-visible,
-.service-card--tarot:focus-visible {
-  transform: translateY(-7px);
+.service-card:hover .service-card__galaxy,
+.service-card:focus-visible .service-card__galaxy {
+  filter: brightness(1.16) saturate(1.12);
+  transform: scale(1.045);
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .service-card,
-  .constellation {
-    transition: none !important;
-  }
+.service-card:focus-visible {
+  outline: 2px solid #efc9ff;
+  outline-offset: 4px;
 }
 
-
-/* ==========================================================
-   RESPONSIVE
-   ========================================================== */
-
-/* ---------- Tablet and compact desktop (≤ 1100px) ---------- */
-@media (max-width: 1100px) {
+@media (max-width: 1120px) {
   .service-stage {
-    grid-template-columns: repeat(2, minmax(0, 286px));
-    justify-content: center;
-    width: min(640px, calc(100% - 32px));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    width: min(820px, calc(100% - 48px));
     min-height: 0;
-    gap: 28px 20px;
-    overflow: clip;
-  }
-
-  .constellation {
-    top: 50%;
-    width: 175%;
-    transform: translate(-50%, -50%);
-  }
-}
-
-
-/* ---------- Mobile (≤ 620px) ---------- */
-@media (max-width: 620px) {
-  .service-stage {
-    grid-template-columns: minmax(0, 286px);
-    justify-content: center;
-    width: min(330px, calc(100% - 28px));
-    min-height: 0;
-    gap: 18px;
-  }
-
-  .constellation {
-    top: 40px;
-    width: 175%;
-    opacity: .4;
-    transform: translateX(-50%);
+    gap: 20px;
   }
 
   .service-card {
-    width: 286px;
+    height: clamp(360px, 43vw, 430px);
   }
 
-  .service-card--birth:hover,
-  .service-card--blood:hover,
-  .service-card--zodiac:hover,
-  .service-card--zodiac:focus-visible,
-  .service-card--tarot:hover,
-  .service-card--birth:focus-visible,
-  .service-card--blood:focus-visible,
-  .service-card--tarot:focus-visible {
-    transform: translateY(-6px);
+  .service-card__copy h1,
+  .service-card__title {
+    font-size: clamp(25px, 3vw, 32px);
+  }
+}
+
+@media (max-width: 680px) {
+  .service-stage {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: min(540px, calc(100% - 32px));
+    gap: 16px;
+    padding: 30px 0;
+  }
+
+  .service-card {
+    height: clamp(330px, 78vw, 410px);
+    border-radius: 100px 100px 16px 16px;
+  }
+
+  .service-card__copy {
+    padding: 20px 12px 20px;
+  }
+
+  .service-card__copy h1,
+  .service-card__title {
+    font-size: clamp(22px, 5.4vw, 29px);
+  }
+
+  .service-card__copy p,
+  .service-card__text {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 380px) {
+  .service-stage {
+    grid-template-columns: minmax(0, 1fr);
+    width: min(300px, calc(100% - 32px));
+  }
+
+  .service-card {
+    height: 410px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .service-card {
+    transition: none;
   }
 }

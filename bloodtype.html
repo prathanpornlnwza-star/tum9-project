@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TUM9 - Celestial Blood Type Reading</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="bloodtype.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script src="bloodtype.js"></script>
+</head>
+<body>
+  <div class="cosmos">
+    <div class="cosmos-shade"></div>
+  </div>
+  
+  <header class="site-header">
+    <div class="container-nav">
+      <a class="logo" href="index.html">
+        <span>TUM9</span>
+      </a>
+      <nav>
+        <ul class="nbr">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="fortune.html">Fortune</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <ul class="nbr account-links">
+          <li><a href="login.html">Login</a></li>
+          <li><a href="register.html">Register</a></li>
+          <li><a href="profile.html">Profile</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="top">
+    <!-- =========================================================
+         โซนที่ 1: คำทำนายรายกรุ๊ปเลือด (6 หมวดหมู่ใน Modal)
+         ========================================================= -->
+    <section id="reading-section" class="content-zone">
+      <div class="section-title">
+        <span class="sub-badge">✧ CELESTIAL DESTINY ✧</span>
+        <h1>Blood Type Reading</h1>
+        <p>เลือกตัวอักษรกรุ๊ปเลือดของคุณ เพื่อเปิดคัมภีร์คำทำนายแห่งจักรวาล</p>
+      </div>
+
+      <div class="blood-group-container">
+        <button class="blood-letter-btn" data-group="A" aria-label="Group A">
+          <span class="star-halo"></span>
+          <span class="group-letter">A</span>
+        </button>
+
+        <button class="blood-letter-btn" data-group="B" aria-label="Group B">
+          <span class="star-halo"></span>
+          <span class="group-letter">B</span>
+        </button>
+
+        <button class="blood-letter-btn" data-group="AB" aria-label="Group AB">
+          <span class="star-halo"></span>
+          <span class="group-letter">AB</span>
+        </button>
+
+        <button class="blood-letter-btn" data-group="O" aria-label="Group O">
+          <span class="star-halo"></span>
+          <span class="group-letter">O</span>
+        </button>
+      </div>
+    </section>
+
+    <div class="cosmic-divider">
+      <span>✦ ──────── ☽ ──────── ✦</span>
+    </div>
+
+    <!-- =========================================================
+         โซนที่ 2: ระบบจับคู่ความเข้ากันได้ (Blood Compatibility)
+         ========================================================= -->
+    <section id="compatibility-section" class="glass-card-section">
+      <span class="sub-badge">✧ SOUL ALIGNMENT ✧</span>
+      <h2>Blood Compatibility</h2>
+      <p>เลือกกรุ๊ปเลือดของคุณและคนพิเศษ เพื่อทำนายความสมพงษ์แห่งดวงดาว</p>
+
+      <div class="match-selector-wrapper">
+        <div class="match-box">
+          <span class="match-label">กรุ๊ปของคุณ</span>
+          <div class="mini-btn-group" id="userGroupBtns">
+            <button class="mini-btn" data-val="A">A</button>
+            <button class="mini-btn" data-val="B">B</button>
+            <button class="mini-btn" data-val="AB">AB</button>
+            <button class="mini-btn" data-val="O">O</button>
+          </div>
+        </div>
+
+        <div class="match-symbol">+</div>
+
+        <div class="match-box">
+          <span class="match-label">กรุ๊ปของคนคุย</span>
+          <div class="mini-btn-group" id="partnerGroupBtns">
+            <button class="mini-btn" data-val="A">A</button>
+            <button class="mini-btn" data-val="B">B</button>
+            <button class="mini-btn" data-val="AB">AB</button>
+            <button class="mini-btn" data-val="O">O</button>
+          </div>
+        </div>
+      </div>
+
+      <button class="cosmic-action-btn" id="calcMatchBtn">ทำนายความเข้ากันได้</button>
+
+      <div class="match-result-card" id="matchResultCard">
+        <div class="match-header">
+          <span id="matchPairTitle">A ✦ O</span>
+          <div class="match-percent" id="matchPercent">95%</div>
+        </div>
+        <div class="progress-bar-bg">
+          <div class="progress-bar-fill" id="matchProgressBar"></div>
+        </div>
+        <p class="match-desc" id="matchDesc">คำทำนายความเข้ากันได้จะแสดงที่นี่</p>
+      </div>
+    </section>
+
+    <div class="cosmic-divider">
+      <span>✦ ──────── ☽ ──────── ✦</span>
+    </div>
+
+    <!-- =========================================================
+         โซนที่ 3: เสี่ยงทายไพ่จักรวาลตามกรุ๊ปเลือด (Blood Oracle Card)
+         ========================================================= -->
+    <section id="oracle-section" class="glass-card-section oracle-zone">
+      <span class="sub-badge">✧ CELESTIAL DIVINATION ✧</span>
+      <h2>Blood Oracle Card</h2>
+      <p>ขั้นที่ 1: เลือกกรุ๊ปเลือดของคุณเพื่อปรับจูนพลังงานกับจักรวาล</p>
+
+      <!-- ขั้นที่ 1: เลือกกรุ๊ปเลือด -->
+      <div class="oracle-group-selector" id="oracleGroupBtns">
+        <button class="oracle-group-btn active" data-group="A">GROUP A</button>
+        <button class="oracle-group-btn" data-group="B">GROUP B</button>
+        <button class="oracle-group-btn" data-group="AB">GROUP AB</button>
+        <button class="oracle-group-btn" data-group="O">GROUP O</button>
+      </div>
+
+      <p class="oracle-instruction" id="oracleInstruction">
+        ขั้นที่ 2: ตั้งจิตอธิษฐาน แล้วเลือกไพ่จักรวาล 1 ใบตามสัญชาตญาณ
+      </p>
+
+      <!-- ขั้นที่ 2: กระดานไพ่ 4 ใบ -->
+      <div class="oracle-deck" id="oracleDeck">
+        <!-- JavaScript จะสร้างไพ่ 4 ใบพร้อมสุ่มตำแหน่งตรงนี้ -->
+      </div>
+
+      <!-- ขั้นที่ 3: กล่องแสดงคำทำนายและปุ่มสับไพ่ใหม่ -->
+      <div class="oracle-reading-box" id="oracleReadingBox">
+        <div class="oracle-card-badge" id="oracleCardBadge">THE ECLIPSE • GROUP A</div>
+        <h3 class="oracle-card-subtitle" id="oracleCardSubtitle">สุริยุปราคา — จุดเปลี่ยนและการปล่อยวาง</h3>
+        <p class="oracle-message" id="oracleMessage">ข้อความคำทำนายจะปรากฏที่นี่...</p>
+        <button class="cosmic-action-btn" id="reshuffleBtn">✦ สับไพ่เสี่ยงทายใหม่ ✦</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>✧ TUM9 CELESTIAL ARCHIVE ✧</p>
+  </footer>
+
+  <!-- =========================================================
+       Modal แสดงคำทำนาย 6 หมวดหมู่ครบทุกมิติ
+       ========================================================= -->
+  <div class="modal-overlay" id="readingModal">
+    <div class="modal-container">
+      <button class="close-btn" id="closeModal">&times;</button>
+      <div class="modal-emblem">
+        <span>☽ ✦ ☾</span>
+      </div>
+      <h2 class="modal-group-title" id="modalTitle">GROUP A</h2>
+      
+      <!-- แท็บ 6 หมวดหมู่ -->
+      <div class="modal-tabs" id="modalTabs">
+        <button class="tab-btn active" data-tab="general">นิสัยทั่วไป</button>
+        <button class="tab-btn" data-tab="love">ความรัก</button>
+        <button class="tab-btn" data-tab="work">การงาน/การเรียน</button>
+        <button class="tab-btn" data-tab="finance">การเงิน</button>
+        <button class="tab-btn" data-tab="health">สุขภาพ</button>
+        <button class="tab-btn" data-tab="soulmate">กรุ๊ปที่สมพงษ์</button>
+      </div>
+
+      <div class="modal-divider">
+        <span class="star-center">✧</span>
+      </div>
+
+      <p class="modal-description" id="modalDescription">
+        คำอธิบายจะแสดงผลที่นี่...
+      </p>
+
+      <button class="cosmic-action-btn" id="closeActionBtn">ปิดคัมภีร์คำทำนาย</button>
+    </div>
+  </div>
+
+</body>
+</html>
