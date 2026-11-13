@@ -1,94 +1,260 @@
-
 <!DOCTYPE html>
 <html lang="th">
-
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | TUM9</title>
-    <!-- เชื่อม CSS -->
-    <link rel="stylesheet" href="contact.css">
+    <title>
+      ติดต่อเรา | TUM9
+    </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-
-</head>
-
-<body class="contact-page">
-
-    <!-- Navbar -->
+    <link rel="stylesheet" href="contact.css">
+  </head>
+  <body class="contact-page">
+    <div class="cosmos">
+      <div class="cosmos-shade">
+      </div>
+    </div>
     <header class="site-header">
-        <div class="container-nav">
-            <a class="logo" href="index.html" aria-label="TUM9 home">
-                <i>TUM9</i>
-            </a>
-            <nav class="nbr" aria-label="Main navigation">
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="service.html">Service</a>
-                <a href="contact.html">Contact</a>
-            </nav>
-
-        </div>
+      <div class="container-nav">
+        <a class="logo" href="index.html">
+          <span>
+            TUM9
+          </span>
+        </a>
+        <nav aria-label="Main navigation">
+          <ul class="nbr">
+            <li>
+              <a href="index.html">
+                Home
+              </a>
+            </li>
+            <li>
+              <a href="fortune.html">
+                Fortune
+              </a>
+            </li>
+            <li>
+              <a href="about.html">
+                About
+              </a>
+            </li>
+            <li>
+              <a href="contact.html" aria-current="page">
+                Contact
+              </a>
+            </li>
+          </ul>
+          <ul class="nbr account-links">
+            <li>
+              <a href="login.html">
+                Login
+              </a>
+            </li>
+            <li>
+              <a href="profile.html">
+                Profile
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </header>
-    <!-- Contact Section -->
-    <main class="contact-container">
-
-       <div class="contact-heading">
-    <h1 class="contact-title">Contact Us</h1>
-    <span class="orbit-star">✦</span>
-</div>
-        <div class="contact-boxes">
-            <!-- Chat Now -->
-            <div class="contact-card">
-                <div class="contact-icon">       
-<svg viewBox="0 0 24 24"
-     xmlns="http://www.w3.org/2000/svg"
-     fill="none"
-     stroke="white"
-     stroke-width="1.8"
-     stroke-linecap="round"
-     stroke-linejoin="round">
-
-    <rect x="3" y="3" width="18" height="18" rx="5"/>
-    <circle cx="12" cy="12" r="4"/>
-    <circle cx="17.5" cy="6.5" r="1"
-            fill="white" stroke="none"/>
-</svg>
-                </div>
-                <a href="https://www.instagram.com/dx2n_1x/"
-   target="_blank"
-   class="contact-button">
-    instagram
-</a>
+    <main class="oracle-main">
+      <header class="oracle-page-header">
+        <span class="oracle-badge">
+          ✦ THE COSMIC PORTAL
+        </span>
+        <h1>
+          ติดต่อ &amp;
+          <span>
+            ส่งคำถาม
+          </span>
+        </h1>
+        <p>
+          ไม่ว่าจะเป็นเรื่องความรัก การงาน การเงิน หรือเส้นทางชีวิต ฝากคำถามไว้ให้ผู้พยากรณ์ช่วยชี้แนะ
+        </p>
+      </header>
+      <div class="oracle-grid">
+        <aside class="oracle-sidebar">
+          <section class="oracle-card oracle-line-card">
+            <p class="oracle-status">
+              <span>
+              </span>
+              เปิดโคจรรับคำปรึกษา (10:00 - 22:00 น.)
+            </p>
+            <h2>
+              ปรึกษาด่วนผ่าน Line Official
+            </h2>
+            <p>
+              พูดคุยกับแอดมินและจองคิวดูดวงแบบส่วนตัว รวดเร็วทันใจ
+            </p>
+            <a href="https://line.me" target="_blank" rel="noopener" class="oracle-line-button">
+              <svg class="line-icon" viewBox="0 0 64 64" role="img" aria-label="LINE">
+                <path fill="currentColor" d="M32 5C16.5 5 4 15.3 4 28c0 11.4 10.1 20.9 23.7 22.7l-1.4 8.5 9.5-7.5C49.7 50.1 60 40.1 60 28 60 15.3 47.5 5 32 5Z"/>
+                <text x="32" y="35" fill="#06c755" font-family="Arial, sans-serif" font-size="15" font-weight="700" text-anchor="middle">
+                  LINE
+                </text>
+              </svg>
+              แชทผ่าน LINE (@astrooracle)
+            </a>
+            <button type="button" class="oracle-copy-button" id="copyLineBtn">
+              คัดลอก Line ID
+            </button>
+          </section>
+          <section class="oracle-card oracle-trust-card">
+            <svg class="oracle-trust-icon" viewBox="0 0 64 64" role="img" aria-label="โล่คุ้มครองข้อมูล">
+              <rect x="1" y="1" width="62" height="62" rx="18" fill="#351052" stroke="#8d4ed0" stroke-width="1.5"/>
+              <path d="M32 17 48 23v10c0 11-6.8 18.9-16 23-9.2-4.1-16-12-16-23V23l16-6Z" fill="#ffcf22"/>
+              <path d="M31 23v25.4c-5.7-3.7-9-8.8-9-15.4v-4l9-3.4Z" fill="#fff3b3"/>
+            </svg>
+            <div>
+              <h2>
+                ความลับแห่งดวงชะตา
+              </h2>
+              <p>
+                ข้อมูลวันเดือนปีเกิดและเรื่องราวส่วนตัวของท่านจะถูกเก็บรักษาเป็นความลับสูงสุด
+              </p>
             </div>
-            <!-- Email Us -->
-            <div class="contact-card">
-
-                <div class="contact-icon">
-                    <svg viewBox="0 0 24 24">
-                        <rect x="2" y="4" width="20" height="16" rx="1"/>
-                        <path d="M3 5l9 8 9-8"/>
-                    </svg>
-                </div>
-                <a href="https://mail.google.com/mail/?view=cm&to=eldonser007@gmail.com"
-   target="_blank"
-   class="contact-button">
-    EMAIL US
-</a>
+          </section>
+          <section class="oracle-card oracle-social-card">
+            <h2>
+              ติดตามคำทำนายรายวัน
+            </h2>
+            <div>
+              <a href="#" aria-label="Instagram" class="social-instagram">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <defs>
+                    <linearGradient id="instagram-gradient" x1="0" y1="1" x2="1" y2="0">
+                      <stop stop-color="#feda75"/>
+                      <stop offset=".45" stop-color="#fa7e1e"/>
+                      <stop offset=".7" stop-color="#d62976"/>
+                      <stop offset="1" stop-color="#4f5bd5"/>
+                    </linearGradient>
+                  </defs>
+                  <rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="url(#instagram-gradient)" stroke-width="2.2"/>
+                  <circle cx="12" cy="12" r="4" fill="none" stroke="url(#instagram-gradient)" stroke-width="2.2"/>
+                  <circle cx="17.3" cy="6.8" r="1.2" fill="#d62976"/>
+                </svg>
+              </a>
+              <a href="#" aria-label="TikTok" class="social-tiktok">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M15 3v10.2a4.8 4.8 0 1 1-4-4.73v3.08a1.9 1.9 0 1 0 1.1 1.72V3h2.9c.6 2.3 2.1 3.8 4 4.1v2.9A8.4 8.4 0 0 1 15 8.9Z" fill="currentColor"/>
+                  <path d="M13.3 4v9.1a4.8 4.8 0 0 0-4.1-4.63v3.08a1.9 1.9 0 1 1 1.1 1.72V4Z" fill="#25f4ee" opacity=".9"/>
+                </svg>
+              </a>
+              <a href="#" aria-label="Facebook" class="social-facebook">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M13.8 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.3-1.5 1.6-1.5H17V3.6c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4V9.9H8.2V13h2.6v8Z" fill="currentColor"/>
+                </svg>
+              </a>
+              <a href="#" aria-label="YouTube" class="social-youtube">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M21.5 7.2a2.8 2.8 0 0 0-2-2C17.7 4.7 12 4.7 12 4.7s-5.7 0-7.5.5a2.8 2.8 0 0 0-2 2C2 9 2 12 2 12s0 3 .5 4.8a2.8 2.8 0 0 0 2 2c1.8.5 7.5.5 7.5.5s5.7 0 7.5-.5a2.8 2.8 0 0 0 2-2C22 15 22 12 22 12s0-3-.5-4.8Z" fill="currentColor"/>
+                  <path d="m10 15.4 5-3.4-5-3.4Z" fill="#fff"/>
+                </svg>
+              </a>
             </div>
-            <!-- Phone -->
-            <div class="contact-card">
-
-                <div class="contact-icon">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M6 2h4l2 5-3 2c1.5 3 3 4.5 6 6l2-3 5 2v4c0 2-2 4-4 4C9 20 3 14 2 5c0-2 2-3 4-3Z"/>
-                    </svg>
-                </div>
-
-                <a href="tel:0858618251" class="contact-button">
-                    085-861-8251
-                </a>
+          </section>
+        </aside>
+        <section class="oracle-card oracle-form-card" aria-labelledby="form-title">
+          <div class="oracle-form-header">
+            <h2 id="form-title">
+              ส่งคำถามถึงผู้พยากรณ์
+            </h2>
+            <p>
+              กรอกรายละเอียดด้านล่างเพื่อรับคำแนะนำหรือติดต่อสอบถามบริการ
+            </p>
+          </div>
+          <form id="oracleForm">
+            <div class="oracle-form-row">
+              <div class="oracle-field">
+                <label for="userName">
+                  นามแห่งท่าน (ชื่อ / นามแฝง) *
+                </label>
+                <input type="text" id="userName" placeholder="เช่น ธันยสิทธิ์" required>
+              </div>
+              <div class="oracle-field">
+                <label for="contactInfo">
+                  ช่องทางรับคำทำนาย (Email / Line ID) *
+                </label>
+                <input type="text" id="contactInfo" placeholder="example@email.com หรือ @lineid" required>
+              </div>
             </div>
-        </div>
+            <fieldset class="oracle-field oracle-topics">
+              <legend>
+                หัวข้อที่ต้องการให้ดวงดาวชี้นำ *
+              </legend>
+              <div id="topicSelector">
+                <button type="button" class="is-active" data-topic="ความรัก">
+                  💖 ความรัก / คู่ครอง
+                </button>
+                <button type="button" data-topic="การงาน">
+                  💼 การงาน / ธุรกิจ
+                </button>
+                <button type="button" data-topic="การเงิน">
+                  💰 การเงิน / โชคลาภ
+                </button>
+                <button type="button" data-topic="ภาพรวมชีวิต">
+                  🔮 ภาพรวมดวงชะตา
+                </button>
+              </div>
+              <input type="hidden" id="selectedTopic" value="ความรัก">
+            </fieldset>
+            <div class="oracle-field">
+              <label for="birthDate">
+                วัน/เดือน/ปีเกิด
+                <small>
+                  (ไม่บังคับ - ช่วยให้แม่นยำขึ้น)
+                </small>
+              </label>
+              <input type="text" id="birthDate" placeholder="เช่น 22 มีนาคม 2549 เวลา 14:30 น.">
+            </div>
+            <div class="oracle-field">
+              <label for="userMessage">
+                เรื่องที่ต้องการสอบถาม *
+              </label>
+              <textarea id="userMessage" rows="4" placeholder="เล่าเรื่องราวหรือคำถามที่ค้างคาใจให้เราฟัง..." required>
+              </textarea>
+            </div>
+            <button type="submit" class="oracle-submit">
+              <span>
+                ส่งคำอธิษฐาน (Cast Your Message)
+              </span>
+              <i class="fa-solid fa-sparkles">
+              </i>
+            </button>
+          </form>
+        </section>
+      </div>
     </main>
-</body>
+    <div class="oracle-modal" id="successModal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <div class="oracle-card">
+        <div class="oracle-modal-icon">
+          ✦
+        </div>
+        <h2 id="modal-title">
+          ส่งคำอธิษฐานสู่จักรวาลสำเร็จ!
+        </h2>
+        <p>
+          ดวงดาวได้รับข้อความของท่านแล้ว ผู้พยากรณ์จะติดต่อกลับไปยังช่องทางที่ระบุไว้โดยเร็วที่สุด
+        </p>
+        <div class="oracle-tracking">
+          <span>
+            รหัสอ้างอิงคำทำนาย:
+          </span>
+          <strong id="trackingCode">
+          </strong>
+        </div>
+        <button type="button" id="closeModalBtn">
+          ปิดหน้าต่าง
+        </button>
+      </div>
+    </div>
+    <script src="contact.js">
+    </script>
+  </body>
 </html>

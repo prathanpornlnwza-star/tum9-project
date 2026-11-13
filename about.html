@@ -3,22 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About | TUM9</title>
+    <title>เกี่ยวกับเรา | TUM9</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="home-chat.css">
 </head>
 <body class="about-page">
-    <header class="site-header">
-        <div class="container-nav">
-            <a class="logo" href="index.html" aria-label="TUM9 home"><i>TUM9</i></a>
-            <nav class="nbr" aria-label="Main navigation">
-                <a href="index.html">Home</a>
-                <a href="about.html" aria-current="page">About</a>
-                <a href="service.html">Service</a>
-                <a href="contact.html">Contact</a>
-            </nav>
-        </div>
-    </header>
+  <header class="site-header">
+    <div class="container-nav">
+      <a class="logo" href="index.html" >
+        <span>TUM9</span>
+      </a>
+      <nav>
+        <ul class="nbr">
+          <li><a href="index.html" >Home</a></li>
+          <li><a href="fortune.html" >Fortune</a></li>
+          <li><a href="about.html" >About</a></li>
+          <li><a href="contact.html" >Contact</a></li>
+        </ul>
+        <ul class="nbr account-links">
+          <li><a href="login.html">Login</a></li>
+          <li><a href="register.html">Register</a></li>
+          <li><a href="profile.html">Profile</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
     <main class="about-main">
         <section class="cards-container" aria-label="Our readings">
@@ -108,5 +118,6 @@
             </article>
         </section>
     </main>
+    <script src="home-chat.js"></script>
 </body>
 </html>
