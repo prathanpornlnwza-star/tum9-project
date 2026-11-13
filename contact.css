@@ -307,6 +307,19 @@
   box-shadow: 0 0 25px #9d4edd70;
 }
 
+<<<<<<< HEAD
+=======
+.oracle-faq { max-width: 800px; margin: 68px auto 0; }
+.oracle-faq > h2 { margin-bottom: 22px; text-align: center; font-size: 1.4rem; }
+.oracle-faq > div { display: grid; gap: 14px; }
+.oracle-faq-item { padding: 0; overflow: hidden; }
+.oracle-faq-item button { display: flex; width: 100%; align-items: center; justify-content: space-between; padding: 19px 23px; border: 0; color: #fff; background: transparent; font: 500 .96rem 'Prompt', sans-serif; text-align: left; cursor: pointer; }
+.oracle-faq-item button i { color: #d29cff; transition: transform .25s; }
+.oracle-faq-item p { max-height: 0; overflow: hidden; margin: 0; padding: 0 23px; font-size: .9rem; line-height: 1.8; transition: max-height .3s, padding .3s; }
+.oracle-faq-item.is-open button i { transform: rotate(180deg); }
+.oracle-faq-item.is-open p { max-height: 150px; padding-bottom: 20px; }
+
+>>>>>>> 99e8c96fe47c8947b6405df7044d41fcaafd783a
 .oracle-modal {
   position: fixed;
   z-index: 10;

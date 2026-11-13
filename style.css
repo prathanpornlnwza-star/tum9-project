@@ -147,8 +147,13 @@ body::after {
 }
 
 .site-header .container-nav nav .account-links {
+<<<<<<< HEAD
   grid-template-columns: repeat(3, minmax(0, 1fr));
   width: 270px;
+=======
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  width: 230px;
+>>>>>>> 99e8c96fe47c8947b6405df7044d41fcaafd783a
   column-gap: 6px;
   padding-left: 12px;
   border-left: 1px solid #d5b5ff40;
@@ -184,14 +189,18 @@ body::after {
   content: "↪";
 }
 
+<<<<<<< HEAD
 .site-header .nbr a[href="register.html"]::before {
   content: "+";
 }
 
+=======
+>>>>>>> 99e8c96fe47c8947b6405df7044d41fcaafd783a
 .site-header .nbr a[href="profile.html"]::before {
   content: "♙";
 }
 
+<<<<<<< HEAD
 .site-header .account-links a[href="register.html"] {
   position: relative;
   padding-left: 18px;
@@ -208,6 +217,11 @@ body::after {
 .nbr a {
   display: flex;
   position: relative;
+=======
+.nbr a {
+  display: flex;
+  position: relative;
+>>>>>>> 99e8c96fe47c8947b6405df7044d41fcaafd783a
   height: 42px;
   align-items: center;
   justify-content: center;
@@ -247,14 +261,19 @@ body::after {
   display: none;
 }
 
+<<<<<<< HEAD
 .account-links li:nth-child(1) a,
 .account-links li:nth-child(2) a {
+=======
+.account-links li:nth-child(1) a {
+>>>>>>> 99e8c96fe47c8947b6405df7044d41fcaafd783a
   height: 34px;
   border: 1px solid #d5b5ff70;
   border-radius: 999px;
   background: #9a5bd52b;
 }
 
+<<<<<<< HEAD
 .account-links li:nth-child(2) a {
   border-color: #dfbdff;
   background: linear-gradient(125deg, #9850d9, #6229b1);
@@ -262,6 +281,9 @@ body::after {
 
 .account-links li:nth-child(1) a:hover,
 .account-links li:nth-child(2) a:hover {
+=======
+.account-links li:nth-child(1) a:hover {
+>>>>>>> 99e8c96fe47c8947b6405df7044d41fcaafd783a
   color: #fff;
   box-shadow: 0 0 18px #b469ff55;
 }
@@ -451,8 +473,13 @@ p {
   }
 
   .site-header .container-nav nav .account-links {
+<<<<<<< HEAD
     grid-template-columns: repeat(3, minmax(0, 1fr));
     width: min(270px, 100%);
+=======
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: min(230px, 100%);
+>>>>>>> 99e8c96fe47c8947b6405df7044d41fcaafd783a
     column-gap: 6px;
     padding-top: 2px;
     padding-left: 0;
@@ -504,7 +531,11 @@ p {
   }
 }
 
+<<<<<<< HEAD
 @media (min-width: 601px) and (max-width: 900px) {
+=======
+@media (min-width: 601px) and (max-width: 760px) {
+>>>>>>> 99e8c96fe47c8947b6405df7044d41fcaafd783a
   .container-nav {
     min-height: 118px;
     flex-direction: column;
@@ -525,7 +556,11 @@ p {
   }
 
   .site-header .container-nav nav .account-links {
+<<<<<<< HEAD
     width: min(270px, 100%);
+=======
+    width: min(230px, 100%);
+>>>>>>> 99e8c96fe47c8947b6405df7044d41fcaafd783a
     padding-top: 2px;
     padding-left: 0;
     border-top: 1px solid #d5b5ff40;
