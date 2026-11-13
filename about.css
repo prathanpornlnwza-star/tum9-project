@@ -1,11 +1,4 @@
-.about-page {
-    background: #0d0b1e url("service-img/about.png") center bottom / cover fixed no-repeat;
-}
 
-.about-page::before,
-.about-page::after {
-    display: none;
-}
 
 .about-main {
     position: relative;

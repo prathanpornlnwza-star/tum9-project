@@ -3,26 +3,35 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TUM.TAROT - เลือกจำนวนไพ่</title>
+  <title>ไพ่ทาโร่ | เลือกจำนวนไพ่</title>
   <link rel="stylesheet" href="select-card.css" />
   <!-- ฟอนต์ Cinzel และ Prompt -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="stylesheet" href="style.css" >
+  <link rel="stylesheet" href="home-chat.css">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Prompt:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header class="site-header">
-        <div class="container-nav">
-            <a class="logo" href="index.html" aria-label="TUM9 home"><i>TUM9</i></a>
-            <nav class="nbr" aria-label="Main navigation">
-                <a href="index.html" aria-current="page">Home</a>
-                <a href="about.html">About</a>
-                <a href="service.html">Service</a>
-                <a href="contact.html">Contact</a>
-            </nav>
-        </div>
-    </header>
+   <header class="site-header">
+    <div class="container-nav">
+      <a class="logo" href="index.html" >
+        <span>TUM9</span>
+      </a>
+      <nav>
+        <ul class="nbr">
+          <li><a href="index.html" >Home</a></li>
+          <li><a href="fortune.html" >Fortune</a></li>
+          <li><a href="about.html" >About</a></li>
+          <li><a href="contact.html" >Contact</a></li>
+        </ul>
+        <ul class="nbr account-links">
+          <li><a href="login.html">Login</a></li>
+          <li><a href="profile.html">Profile</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
   <main class="reading-container">
     <!-- หัวข้อแสดงเรื่องที่เลือกมาจากหน้าแรก -->
@@ -39,7 +48,7 @@
       <!-- 1 ใบ -->
       <div class="card-item" data-count="1">
         <div class="card-box">
-          <img src="logo/Taro-removebg-preview.png" alt="ไพ่ 1 ใบ" class="tarot-img" />
+          <img src="tarot/Back Card.jpg" alt="ไพ่ 1 ใบ" class="tarot-img" />
           <div class="card-glow"></div>
         </div>
         <span class="roman-numeral">I</span>
@@ -49,7 +58,7 @@
       <!-- 3 ใบ -->
       <div class="card-item" data-count="3">
         <div class="card-box">
-          <img src="logo/Taro-removebg-preview.png" alt="ไพ่ 3 ใบ" class="tarot-img" />
+          <img src="tarot/Back Card.jpg" alt="ไพ่ 3 ใบ" class="tarot-img" />
           <div class="card-glow"></div>
         </div>
         <span class="roman-numeral">III</span>
@@ -59,7 +68,7 @@
       <!-- 5 ใบ -->
       <div class="card-item" data-count="5">
         <div class="card-box">
-          <img src="logo/Taro-removebg-preview.png" alt="ไพ่ 5 ใบ" class="tarot-img" />
+          <img src="tarot/Back Card.jpg" alt="ไพ่ 5 ใบ" class="tarot-img" />
           <div class="card-glow"></div>
         </div>
         <span class="roman-numeral">V</span>
@@ -69,7 +78,7 @@
       <!-- 10 ใบ -->
       <div class="card-item" data-count="10">
         <div class="card-box">
-          <img src="logo/Taro-removebg-preview.png" alt="ไพ่ 10 ใบ" class="tarot-img" />
+          <img src="tarot/Back Card.jpg" alt="ไพ่ 10 ใบ" class="tarot-img" />
           <div class="card-glow"></div>
         </div>
         <span class="roman-numeral">X</span>
@@ -77,7 +86,8 @@
       </div>
     </div>
   </main>
-
+  <script src="select-card.js"></script>
+  <script src="home-chat.js"></script>
 </body>
-
+</body>
 </html>

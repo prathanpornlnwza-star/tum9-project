@@ -6,9 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zodiac</title>
     <link rel="stylesheet" href="zodiac.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="home-chat.css">
+    <link rel="stylesheet" href="account.css">
 </head>
 
 <body>
+    <header class="site-header">
+        <div class="container-nav">
+            <a class="logo" href="index.html"><span>TUM9</span></a>
+            <nav aria-label="Main navigation">
+                <ul class="nbr">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="fortune.html">Fortune</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <ul class="nbr account-links">
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
     <div class="bg">
         <div class="box1">
             <button onclick="cs()" class="close">&times;</button>
@@ -36,6 +56,7 @@
         </div>
     </div>
     <script src="zodiac.js"></script>
+    <script src="home-chat.js"></script>
 </body>
 
 </html>
