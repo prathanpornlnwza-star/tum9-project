@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Lucky | TUM9</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="daily-lucky.css">
+  <link rel="stylesheet" href="home-chat.css">
+</head>
+<body class="daily-lucky-page">
+  <div class="cosmos" aria-hidden="true">
+    <div class="cosmos-shade"></div>
+  </div>
+  <header class="site-header">
+    <div class="container-nav">
+      <a class="logo" href="index.html"><span>TUM9</span></a>
+      <nav aria-label="Main navigation">
+        <ul class="nbr">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="fortune.html" aria-current="page">Fortune</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <ul class="nbr account-links">
+          <li><a href="login.html">Login</a></li>
+          <li><a href="register.html">Register</a></li>
+          <li><a href="profile.html">Profile</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="daily-main">
+    <section class="daily-hero" aria-labelledby="daily-title">
+      <span class="daily-eyebrow"><span aria-hidden="true">✦</span> YOUR DAILY COSMIC NOTE</span>
+      <h1 id="daily-title">Daily Lucky</h1>
+      <p class="daily-date" id="dailyDate" aria-live="polite"></p>
+      <p class="daily-message" id="dailyMessage" aria-live="polite">กำลังเปิดคำทำนายประจำวัน...</p>
+    </section>
+
+    <section class="daily-highlights" aria-label="สิ่งนำโชคประจำวัน">
+      <article class="daily-highlight">
+        <span aria-hidden="true">✧</span>
+        <p>เลขนำโชค</p>
+        <strong id="luckyNumber">—</strong>
+      </article>
+      <article class="daily-highlight">
+        <span aria-hidden="true">◈</span>
+        <p>สีเสริมพลัง</p>
+        <strong id="luckyColor">—</strong>
+      </article>
+      <article class="daily-highlight">
+        <span aria-hidden="true">☼</span>
+        <p>จังหวะที่เหมาะ</p>
+        <strong id="luckyFocus">—</strong>
+      </article>
+    </section>
+
+    <p class="daily-disclaimer">คำทำนายนี้จัดทำเพื่อความบันเทิงและเป็นแรงบันดาลใจในการใช้ชีวิตประจำวัน</p>
+    <a class="daily-back-link" href="fortune.html">กลับไปสำรวจศาสตร์พยากรณ์ <span aria-hidden="true">→</span></a>
+  </main>
+  <script src="daily-lucky.js"></script>
+  <script src="home-chat.js"></script>
+</body>
+</html>

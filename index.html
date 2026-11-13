@@ -6,6 +6,7 @@
   <title>หน้าหลัก |TUM9</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="home-chat.css">
+  <link rel="stylesheet" href="lucky-wheel.css">
 </head>
 <body>
   <div class="cosmos">
@@ -18,7 +19,7 @@
       </a>
       <nav>
         <ul class="nbr">
-          <li><a href="index.html" >Home</a></li>
+          <li><a href="index.html" aria-current="page">Home</a></li>
           <li><a href="fortune.html" >Fortune</a></li>
           <li><a href="about.html" >About</a></li>
           <li><a href="contact.html" >Contact</a></li>
@@ -41,11 +42,42 @@
         ความมืดมิดไม่ได้น่ากลัวหากเจ้ามีพลังแห่งวงจรรูปราศีเป็นศาสตรา จงปลดพันธนาการแห่งพันปี<br>
         แล้วถอดรหัสความลับที่จักรวาลซ่อนไว้ ก่อนที่วงล้อแห่งเวลาจะบดขยี้ทุกสิ่ง
       </p>
-      <a href="#" class="star-bth" >
+      <button class="star-bth" type="button" data-wheel-reveal aria-controls="lucky-wheel" aria-expanded="false">
         <span>LUCKY WHEEL</span>
-      </a>
+      </button>
     </section>
+    <aside class="lucky-wheel" id="lucky-wheel" data-lucky-wheel aria-labelledby="lucky-wheel-title" hidden>
+      <div class="lucky-wheel-content" data-wheel-content hidden>
+        <h2 id="lucky-wheel-title">วงล้อเลขนำโชค</h2>
+        <p class="lucky-wheel-description">หมุนวงล้อเพื่อรับเลขนำโชคประจำวัน</p>
+        <div class="lucky-wheel-stage">
+          <span class="lucky-wheel-pointer"></span>
+          <div class="lucky-wheel-face"></div>
+          <span class="lucky-wheel-center"></span>
+        </div>
+        <button class="lucky-wheel-button" type="button">หมุนวงล้อ</button>
+        <button class="lucky-wheel-result-view" type="button" data-wheel-result-view aria-haspopup="dialog" hidden>ดูคำทำนายล่าสุด</button>
+        <p class="lucky-wheel-status" role="status" aria-live="polite">กำลังเตรียมวงล้อ...</p>
+        <p class="lucky-wheel-cooldown"></p>
+      </div>
+    </aside>
   </main>
+  <dialog class="lucky-wheel-result" data-wheel-result aria-labelledby="wheel-result-heading" aria-describedby="wheel-result-meaning">
+    <div class="lucky-wheel-result-content">
+      <p class="lucky-wheel-result-eyebrow" data-result-category></p>
+      <h2 id="wheel-result-heading">เลขที่คุณได้รับคือ <span data-result-number></span></h2>
+      <h3 data-result-title></h3>
+      <p id="wheel-result-meaning" data-result-meaning></p>
+      <div class="lucky-wheel-result-advice">
+        <strong>คำแนะนำ</strong>
+        <p data-result-advice></p>
+      </div>
+      <button class="lucky-wheel-result-close" type="button" data-result-close>ปิด</button>
+    </div>
+  </dialog>
+  <script src="lucky-wheel-readings.js"></script>
+  <script src="lucky-wheel.js"></script>
+  <script src="home-chat.js"></script>
   <script src="home-chat.js"></script>
 </body>
 </html>

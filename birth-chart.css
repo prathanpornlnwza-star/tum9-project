@@ -1,0 +1,203 @@
+.birth-chart-main {
+  position: relative;
+  z-index: 1;
+  width: min(1050px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: clamp(48px, 8vw, 88px) 0 80px;
+  animation: page-arrival 1.2s ease-out both;
+}
+
+.birth-chart-hero {
+  max-width: 760px;
+  margin: 0 auto 42px;
+  text-align: center;
+}
+
+.reading-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: #d7b7f0;
+  font-size: .73rem;
+  letter-spacing: .17em;
+}
+
+.reading-eyebrow > span {
+  color: #e2bdff;
+  font-size: 1.1rem;
+}
+
+.birth-chart-hero h1 {
+  margin: 14px 0 10px;
+  background: linear-gradient(100deg, #f8edff 20%, #d2a7ff 60%, #9bdcff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(2.6rem, 7vw, 4.5rem);
+  font-weight: 500;
+  line-height: 1.2;
+  text-shadow: none;
+}
+
+.birth-chart-hero > p {
+  margin: 0 auto;
+  color: #c8bddb;
+  font-size: clamp(.95rem, 1.5vw, 1.08rem);
+  line-height: 1.9;
+  text-shadow: none;
+}
+
+.birth-chart-content {
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  gap: 20px;
+}
+
+.birth-chart-card {
+  border: 1px solid #d5b5ff36;
+  border-radius: 20px;
+  background: linear-gradient(145deg, #21152fdc, #110b1ceF);
+  box-shadow: 0 18px 42px #00000038, inset 0 1px #ffffff08;
+  backdrop-filter: blur(12px);
+}
+
+.birth-chart-intro {
+  padding: clamp(24px, 4vw, 42px);
+}
+
+.birth-chart-symbol {
+  display: grid;
+  width: 54px;
+  height: 54px;
+  margin-bottom: 20px;
+  place-items: center;
+  border: 1px solid #d5b5ff55;
+  border-radius: 17px;
+  color: #f3d9ff;
+  background: #9a5bd52b;
+  font-size: 1.8rem;
+  box-shadow: 0 0 22px #a35cf333;
+}
+
+.birth-chart-card h2 {
+  margin-bottom: 12px;
+  color: #f7efff;
+  font-size: clamp(1.2rem, 2.4vw, 1.55rem);
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.birth-chart-card p {
+  color: #c8bddb;
+  font-size: .92rem;
+  line-height: 1.9;
+  text-shadow: none;
+}
+
+.birth-chart-card .birth-chart-note {
+  margin-top: 20px;
+  padding: 12px 15px;
+  border-left: 2px solid #c28bf0;
+  color: #bcaecb;
+  background: #ffffff08;
+  font-size: .8rem;
+  line-height: 1.7;
+}
+
+.birth-chart-details {
+  padding: clamp(24px, 4vw, 38px);
+}
+
+.birth-chart-details h2 {
+  margin-top: 10px;
+}
+
+.birth-chart-details ul {
+  display: grid;
+  gap: 4px;
+  margin: 20px 0 22px;
+  list-style: none;
+}
+
+.birth-chart-details li {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 13px 0;
+  border-bottom: 1px solid #d5b5ff1c;
+}
+
+.birth-chart-details li > span {
+  display: grid;
+  width: 32px;
+  height: 32px;
+  flex: 0 0 32px;
+  place-items: center;
+  border: 1px solid #d5b5ff40;
+  border-radius: 10px;
+  color: #dfbdff;
+  background: #9a5bd51c;
+  font-size: .7rem;
+}
+
+.birth-chart-details li strong {
+  color: #f0e5f9;
+  font-size: .9rem;
+  font-weight: 500;
+}
+
+.birth-chart-details li p {
+  margin-top: 3px;
+  font-size: .78rem;
+  line-height: 1.7;
+}
+
+.birth-chart-contact {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 16px;
+  border: 1px solid #d5b5ff68;
+  border-radius: 999px;
+  color: #f5eaff;
+  background: #9a5bd522;
+  font-size: .85rem;
+  transition: transform .25s ease, background .25s ease, box-shadow .25s ease;
+}
+
+.birth-chart-contact:hover {
+  transform: translateY(-2px);
+  background: #9a5bd54a;
+  box-shadow: 0 0 22px #a35cf348;
+}
+
+.birth-chart-contact span {
+  color: #e2bdff;
+  transition: transform .2s ease;
+}
+
+.birth-chart-contact:hover span {
+  transform: translateX(4px);
+}
+
+@media (max-width: 700px) {
+  .birth-chart-main {
+    width: min(100% - 32px, 520px);
+  }
+
+  .birth-chart-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .birth-chart-main {
+    animation: none;
+  }
+
+  .birth-chart-contact,
+  .birth-chart-contact span {
+    transition: none;
+  }
+}
