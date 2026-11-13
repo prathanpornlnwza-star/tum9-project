@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services | TUM9</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="service.css">
+
+</head>
+
+<body class="service-page">
+
+  <!-- ========== พื้นหลัง ========== -->
+  <div class="cosmos" aria-hidden="true">
+    <div class="cosmos-shade"></div>
+  </div>
+
+
+  <!-- ========== เมนูด้านบน ========== -->
+  <header class="site-header">
+    <div class="container-nav">
+
+      <a class="logo" href="index.html" aria-label="TUM9 home">
+        <span>TUM9</span>
+      </a>
+
+      <nav aria-label="Main navigation">
+        <ul class="nbr">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="service.html" aria-current="page">Service</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <!-- ========== เนื้อหาหลัก ========== -->
+  <!-- data-slot: 0 = ซ้าย | 1 = หน้ากลาง | 2 = ขวา | 3 = หลังกลาง -->
+  <main class="service-stage" data-carousel aria-label="บริการของ TUM9">
+
+    <!-- ดวงดาวจางๆ เป็นลายพื้นหลัง -->
+    <img class="constellation" src="service-img/ดาว.png" alt="" aria-hidden="true">
+
+
+    <!-- การ์ด 1: Birth Chart (ซ้าย) -->
+    <article class="service-card service-card--birth" data-slot="0">
+      <img class="service-card__arch" src="service-img/กรอปหลัก.png" alt="" aria-hidden="true">
+      <img class="service-card__visual service-card__visual--skull" src="service-img/หัวกระโหลก.png" alt="">
+
+      <div class="service-card__copy">
+        <h1>Birth Chart</h1>
+        <p>สำรวจดวงกำเนิดของคุณ<br>จากแผนผังดวงดาว</p>
+      </div>
+    </article>
+
+
+    <!-- การ์ด 2: Blood Type Reading (หลังกลาง) -->
+    <article class="service-card service-card--blood" data-slot="3">
+      <img class="service-card__arch" src="service-img/กรอป.png" alt="" aria-hidden="true">
+      <img class="service-card__visual service-card__visual--bottle" src="service-img/ขวด.png" alt="">
+
+      <div class="service-card__copy">
+        <h1>Blood Type Reading</h1>
+        <p>ทายนิสัยและพลังลับ<br>จากกรุ๊ปเลือด</p>
+      </div>
+    </article>
+
+
+    <!-- การ์ด 3: Zodiac Signs (ขวา) -->
+    <a class="service-card service-card--zodiac" href="zodiac.html" data-slot="2">
+      <img class="service-card__arch" src="service-img/กรอปหลัก.png" alt="" aria-hidden="true">
+      <img class="service-card__visual service-card__visual--zodiac" src="service-img/ตาราง.png" alt="">
+
+      <span class="service-card__copy">
+        <span class="service-card__title">Zodiac Signs</span>
+        <span class="service-card__text">ค้นพบแก่นแท้ของ<br>ดวงดาวประจำราศี</span>
+      </span>
+    </a>
+
+
+    <!-- การ์ด 4: Tarot Reading (หน้ากลาง) -->
+    <a class="service-card service-card--tarot" href="taro.html" data-slot="1">
+      <img class="service-card__arch" src="service-img/กรอปหลัก.png" alt="" aria-hidden="true">
+      <img class="service-card__visual service-card__visual--tarot" src="service-img/ไพ่.png" alt="">
+
+      <span class="service-card__copy">
+        <span class="service-card__title">Tarot Reading</span>
+        <span class="service-card__text">เปิดไพ่เพื่อค้นหาคำตอบ<br>และมุมมองใหม่ให้กับชีวิต</span>
+      </span>
+    </a>
+
+  </main>
+
+  <script src="service.js"></script>
+</body>
+</html>
